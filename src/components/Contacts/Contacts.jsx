@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { InstagramIcon } from '../Icon';
+import { InstagramIcon } from '../Icon/index';
 import { ButtonLink } from '../Button/Button';
 import { Link } from '../Link/Link';
 import { links } from '../../utils/links';
