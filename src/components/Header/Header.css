@@ -1,0 +1,22 @@
+.Header {
+    display: flex;
+    align-items: center;
+
+    padding: 0 30px;
+
+    
+    height: 72px;
+
+    border-bottom: 1px solid var(--dark-1);
+}
+
+.Header_logo {
+    width: 10%;
+}
+
+.Header_navbar {
+    width: 60%;
+
+    justify-content: flex-end;
+    margin-right: 32px;
+}

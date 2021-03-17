@@ -1,25 +1,56 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import { routes, RouteWithSubRoutes } from './utils/routes';
+import { apiUsers } from './utils/api';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { Header } from './components/Header/Header';
+
+class App extends Component {
+    state = { users: [] };
+
+    componentDidMount() {
+        apiUsers.getAll().then((res) => {
+            this.setState({ users: res });
+        });
+    }
+
+    _parseUsers = (users) => {
+        return users.map((user) => {
+            // Parse task information
+            return user;
+        });
+    };
+
+    render() {
+        return (
+            <Router className="App">
+                <Header />
+            </Router>
+        );
+    }
 }
 
 export default App;
+
+/*
+<Router className="App">
+                <h1>Users</h1>
+                {this.state.users.map((user) => (
+                    <div key={user.id}>{user.username}</div>
+                ))}
+                <ul>
+                    <li>
+                        <Link to="/tacos">Tacos</Link>
+                    </li>
+                    <li>
+                        <Link to="/sandwiches">Sandwiches</Link>
+                    </li>
+                </ul>
+                <Switch>
+                    {routes.map((route, i) => (
+                        <RouteWithSubRoutes key={i} {...route} />
+                    ))}
+                </Switch>
+            </Router>
+*/

@@ -1,0 +1,7 @@
+.Navbar {
+    display: flex;
+}
+
+.Navbar_link {
+    margin-left: 16px;
+}

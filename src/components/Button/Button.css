@@ -1,0 +1,34 @@
+.ButtonLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url("./btn_bg.png");
+    background-position: center;
+    background-size: 200px;
+
+    height: 40px;
+    width: 200px;
+
+    font-size: 18px;
+    line-height: 45px;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    text-decoration: none;
+
+    color: var(--dark-1);
+
+    filter: opacity(0.8);
+
+    transition: 0.3s;
+}
+
+.ButtonLink:hover {
+    filter: opacity(1);
+    color: var(--dark-2);
+}
+
+.ButtonLink:active {
+    filter: opacity(0.8);
+    color: var(--dark-1);
+}

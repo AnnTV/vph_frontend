@@ -1,0 +1,19 @@
+.Contacts {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 30%;
+
+    border-left: 1px solid var(--dark-1);
+}
+
+.Contacts_icons {
+    display: flex;
+    width: max-content;
+    margin-left: 32px;
+}
+
+.Contacts_icons .Icon {
+    margin-right: 8px;
+}
