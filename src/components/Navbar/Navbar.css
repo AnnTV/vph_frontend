@@ -40,6 +40,9 @@
     fill: var(--light-1);
 }
 
+.bm-burger-button {
+    display: none;
+}
 
 /* Landscape phones and portrait tablets */
 @media (max-width: 767px) {
