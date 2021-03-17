@@ -26,6 +26,11 @@ class App extends Component {
         return (
             <Router className="App">
                 <Header />
+                <Switch>
+                    {routes.map((route, i) => (
+                        <RouteWithSubRoutes key={i} {...route} />
+                    ))}
+                </Switch>
             </Router>
         );
     }

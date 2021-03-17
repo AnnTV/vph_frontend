@@ -1,47 +1,41 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 
+import { MainPage } from '../pages/Main/Main';
+
 export const routes = [
     {
         path: '/main',
         text: 'Главная',
-        component: <h2>Главная</h2>,
+        component: MainPage,
     },
     {
         path: '/education',
         text: 'Образование',
-        component: <h2>Образование</h2>,
+        component: MainPage,
     },
     {
         path: '/services',
         text: 'Услуги',
-        component: <h2>Услуги</h2>,
+        component: MainPage,
     },
     {
         path: '/about',
         text: 'О нас',
-        component: <h2>О нас</h2>,
+        component: MainPage,
     },
     {
         path: '/news',
         text: 'Новости',
-        component: <h2>Новости</h2>,
+        component: MainPage,
     },
     {
         path: '/contacts',
         text: 'Контакты',
-        component: <h2>Контакты</h2>,
+        component: MainPage,
     },
 ];
 
 export const RouteWithSubRoutes = (route) => {
-    return (
-        <Route
-            path={route.path}
-            render={(props) => (
-                // pass the sub-routes down to keep nesting
-                <route.component {...props} routes={route.routes} />
-            )}
-        />
-    );
+    return <Route path={route.path} render={(props) => <route.component {...props} routes={route.routes} />} />;
 };

@@ -11,10 +11,18 @@ export const NavLink = ({ ...props }) => {
     );
 };
 
-export const Link = ({ ...props }) => {
+export const ALink = ({ ...props }) => {
     return (
         <a href={props.path} className={'Link ' + props.className} target={'_blank'}>
             {props.children}
         </a>
+    );
+};
+
+export const Link = ({ ...props }) => {
+    return (
+        <NormalLink to={props.path} className={'Link ' + props.className}>
+            {props.children}
+        </NormalLink>
     );
 };

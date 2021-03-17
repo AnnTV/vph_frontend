@@ -10,13 +10,21 @@
     border-bottom: 1px solid var(--dark-1);
 }
 
+.Header__logo-and-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: calc(120px + 600px + 32px + 16px);
+    width: 70%;
+}
+
 .Header_logo {
     width: 10%;
 }
 
 .Header_navbar {
     width: 60%;
-
+    min-width: 600px;
     justify-content: flex-end;
     margin-right: 32px;
 }
