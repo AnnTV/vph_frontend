@@ -52,6 +52,7 @@
 
     /* Position and sizing of burger button */
     .bm-burger-button {
+        display: block;
         position: fixed;
         width: 32px;
         height: 24px;
