@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Redirect } from 'react-router-dom';
 import { routes, RouteWithSubRoutes } from './utils/routes';
 import { apiUsers } from './utils/api';
 import './App.css';
@@ -24,12 +24,13 @@ class App extends Component {
 
     render() {
         return (
-            <Router className="App">
+            <Router className="App" id="outer-container">
                 <Header />
-                <Switch>
+                <Switch id={'page-id'}>
                     {routes.map((route, i) => (
                         <RouteWithSubRoutes key={i} {...route} />
                     ))}
+                    <Redirect from="/" to="/main" />
                 </Switch>
             </Router>
         );

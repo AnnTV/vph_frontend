@@ -28,3 +28,29 @@
     justify-content: flex-end;
     margin-right: 32px;
 }
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+    .Header {
+        flex-direction: column;
+        border-bottom: none;
+    }
+    .Header_logo {
+        display: none;
+    }
+
+    .Header__logo-and-nav {
+        width: 100%;
+    }
+}
+
+/* Landscape phones and smaller */
+@media (max-width: 480px) {
+    .Header {
+        flex-direction: column;
+    }
+
+    .Header_logo {
+        display: none;
+    }
+}

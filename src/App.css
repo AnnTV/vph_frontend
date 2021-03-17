@@ -4,9 +4,16 @@
 
 .Page {
   display: flex;
+  width: 100%;
 }
 
 .Page__block {
   width: 100%;
   border-bottom: 1px solid var(--dark-1);
+}
+
+@media (max-width: 767px) {
+  .Page__block {
+    overflow-x: hidden;
+  }
 }

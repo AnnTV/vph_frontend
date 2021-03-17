@@ -18,3 +18,17 @@
 .Contacts_icons .Icon {
     margin-right: 16px;
 }
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+    .Contacts {
+        display: none;
+    }
+}
+
+/* Landscape phones and smaller */
+@media (max-width: 480px) {
+    .Contacts {
+        display: none;
+    }
+}
