@@ -1,0 +1,8 @@
+.Devider {
+    background-image: url("./images/devider.png");
+    height: 9px;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 8px 0;
+    filter: opacity(0.8);
+}
