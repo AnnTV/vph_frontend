@@ -108,6 +108,26 @@
 	background-color: var(--primary-1);
 }
 
+.Main_second-block {
+    display: flex;
+    justify-content: center;
+    padding: 32px 0;
+}
+
+.Main_second-block__slider {
+    width: 90%;
+    padding: 30px;
+}
+
+.Main_second-block .Card {
+    height: 100%;
+}
+
+.Main_second-block__slider button::before {
+    color: var(--primary-1);
+}
+
+
 /* Landscape phones and portrait tablets */
 @media (max-width: 767px) {
     .Main_first-block {
@@ -131,7 +151,7 @@
 
     .Main_first-block__label span {
         font-weight: 500;
-        font-size: 48px;
+        font-size: 38px;
         line-height: 60px;
         letter-spacing: 0.2em;
     }
@@ -157,6 +177,17 @@
         max-width: calc(100vw - 32px);
         border-left: none;
         border-bottom: 1px solid var(--dark-1);
+    }
+    
+    .Main_second-block__slider {
+        width: calc(100% - 64px);
+        padding: 16px 32px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .Main_second-block__slider ul {
+        left: 0;
     }
 }
 

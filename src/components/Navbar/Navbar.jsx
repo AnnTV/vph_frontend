@@ -21,9 +21,9 @@ export const Navbar = ({ ...props }) => {
             <Menu
                 width={280}
                 right
-                bubble
+                noOverlay
+                disableCloseOnEsc
                 className={'BurgerMenu'}
-                pageWrapId={'page-id'}
                 outerContainerId={'outer-container'}
             >
                 {routes.map((item, idx) => (
