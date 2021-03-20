@@ -4,6 +4,8 @@ import React from 'react';
 import { Link } from '../../components/Link/Link';
 import Slider from 'react-slick';
 import { Card } from '../../components/Card/Card';
+import { Accordion } from '../../components/Accordion/Accordion';
+
 import './Main.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -32,6 +34,43 @@ export const MainPage = () => {
             },
         ],
     };
+
+    const accordionData = [
+        {
+            heading: 'Гештальт-терапия',
+            content: 'Универсальный метод работы с любыми запросами клиентов, эффективен как для индивидуальных, так и для групповых форматов работы. \n' +
+                'Курс 1-ой ступени включает теорию и методы гештальт-терапии, навыки гештальт-диагностики, принципы работы в обучающих и терапевтических группах. \n' +
+                'Курс 2-ой ступени дает практический опыт и формирует терапевтический стиль.\n',
+            steps: [
+                {
+                    text: '1-я ступень',
+                },
+                {
+                    text: '2-я ступень',
+                },
+                {
+                    text: 'Супервизия',
+                }
+            ]
+        },
+        {
+            heading: 'Гештальт-терапия',
+            content: 'Универсальный метод работы с любыми запросами клиентов, эффективен как для индивидуальных, так и для групповых форматов работы. \n' +
+                'Курс 1-ой ступени включает теорию и методы гештальт-терапии, навыки гештальт-диагностики, принципы работы в обучающих и терапевтических группах. \n' +
+                'Курс 2-ой ступени дает практический опыт и формирует терапевтический стиль.\n',
+            steps: [
+                {
+                    text: '1-я ступень',
+                },
+                {
+                    text: '2-я ступень',
+                },
+                {
+                    text: 'Супервизия',
+                }
+            ]
+        }
+    ]
 
     return (
         <div className={'Page'}>
@@ -88,14 +127,9 @@ export const MainPage = () => {
                     />
                 </Slider>
             </article>
+            <article className={'Page__block Main_accordion-block'}>
+                <Accordion items={accordionData} />
+            </article>
         </div>
     );
 };
-
-/*
-<div className={'Main_first-block__text-info'}>
-                    <section className={'Main_first-block__label'}>Обучаем практике</section>
-                    <section className={'Main_first-block__slogan'}>xxx</section>
-                </div>
-                <section className={'Main_first-block__urls'}>xxx</section> 
-*/

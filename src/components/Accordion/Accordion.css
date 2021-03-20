@@ -1,0 +1,117 @@
+.Accordion {
+    width: calc(90% - 60px);
+    padding: 30px;
+    min-width: 600px;
+}
+
+.accordion__heading {
+    width: 100%;
+    border-bottom: 1px solid var(--dark-1);
+}
+
+.accordion__button {
+    max-width: calc(100% - 36px);
+    background-color: var(--light-1);
+}
+
+.accordion__button:hover {
+    background-color: var(--primary-2);
+    filter: opacity(0.8);
+}
+
+.accordion__item {
+    border: 1px solid var(--dark-1);
+}
+
+.accordion__panel {
+    padding: 0;
+    transition: all ease-in-out 1s;
+}
+
+.Accordion__panel {
+    display: flex;
+}
+
+.Accordion__text {
+    width: 65%;
+    padding: 16px 32px;
+}
+
+.Accordion__steps {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 35%;
+    border-left: 1px solid var(--dark-1);
+    padding: 16px 32px;
+
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.Accordion__steps__step {
+    margin: 0.5em 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Accordion__steps__step > span {
+    margin-bottom: 0.5em;
+}
+
+.Accordion__steps__step span:after {
+    display: block;
+    position: relative;
+    left: 0; /*изменить на right:0;, чтобы изменить направление подчёркивания */
+    width: 0;/*задаём длинну линии до наведения курсора*/
+    height: 2px; /*задаём ширину линии*/
+    background-color: var(--primary-2); /*задаём цвет линии*/
+    content: "";
+    transition: 0.3s ease-out; /*задаём время анимации*/
+}
+
+.Accordion__steps__step span:hover:after,
+.Accordion__steps__step span:focus:after {
+    width: 100%;
+}
+
+.Accordion__steps__step span:active:after {
+    background-color: var(--primary-1);
+}
+
+.Accordion__steps__step span:hover {
+    color: var(--primary-1);
+}
+
+.Accordion__steps__step span:active {
+    color: var(--dark-1);
+}
+
+@media (max-width: 767px) {
+    .Accordion {
+        padding: 16px;
+        min-width: 320px;
+    }
+
+    .Accordion__panel {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .Accordion__text {
+        width: calc(100% - 32px);
+        padding: 16px;
+    }
+
+    .Accordion__steps {
+        border-left: none;
+        border-top: 1px solid var(--dark-1);
+        padding: 16px;
+        width: calc(100% - 32px);
+    }
+}
