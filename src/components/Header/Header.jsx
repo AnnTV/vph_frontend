@@ -1,6 +1,4 @@
 import React from 'react';
-import { useMediaQuery } from 'react-responsive';
-
 import { Logo } from '../Logo/Logo';
 import { Navbar } from '../Navbar/Navbar';
 import { Contacts } from '../Contacts/Contacts';

@@ -62,14 +62,3 @@
         width: 100%;
     }
 }
-
-/* Landscape phones and smaller */
-@media (max-width: 480px) {
-    .Header {
-        flex-direction: column;
-    }
-
-    .Header_logo {
-        display: none;
-    }
-}

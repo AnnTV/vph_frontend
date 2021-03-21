@@ -5,6 +5,7 @@ import { apiUsers } from './utils/api';
 import './App.css';
 
 import { Header } from './components/Header/Header';
+import { Footer } from './components/Footer/Footer';
 
 class App extends Component {
     state = { users: [] };
@@ -32,31 +33,10 @@ class App extends Component {
                     ))}
                     <Redirect from="/" to="/main" />
                 </Switch>
+                <Footer />
             </Router>
         );
     }
 }
 
 export default App;
-
-/*
-<Router className="App">
-                <h1>Users</h1>
-                {this.state.users.map((user) => (
-                    <div key={user.id}>{user.username}</div>
-                ))}
-                <ul>
-                    <li>
-                        <Link to="/tacos">Tacos</Link>
-                    </li>
-                    <li>
-                        <Link to="/sandwiches">Sandwiches</Link>
-                    </li>
-                </ul>
-                <Switch>
-                    {routes.map((route, i) => (
-                        <RouteWithSubRoutes key={i} {...route} />
-                    ))}
-                </Switch>
-            </Router>
-*/
