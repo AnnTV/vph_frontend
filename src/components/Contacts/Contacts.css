@@ -20,14 +20,24 @@
 }
 
 /* Landscape phones and portrait tablets */
-@media (max-width: 767px) {
+@media (max-width: 1024px) {
+    .Contacts_icons .Icon:last-child {
+        margin-right: 8px;
+    }
+
+    .Contacts_btn {
+        width: 180px;
+        max-width: 180px;
+    }
+
     .Contacts {
-        display: none;
+        justify-content: space-around;
+        min-width: 320px;
     }
 }
 
 /* Landscape phones and smaller */
-@media (max-width: 480px) {
+@media (max-width: 767px) {
     .Contacts {
         display: none;
     }

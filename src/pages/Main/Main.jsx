@@ -9,127 +9,90 @@ import { Accordion } from '../../components/Accordion/Accordion';
 import './Main.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { BlockTitle } from '../../components/BlockTitle/BlockTitle';
+import { BlockLink } from '../../components/BlockLink/BlockLink';
+import { Devider } from '../../components/Devider/Devider';
+import { ContactForm } from '../../components/ContactForm/ContactForm';
+import { caruselSettings } from '../../utils/utilData';
+import { labelTexts, sloganText, urlsLinks, cardsData, accordionData } from '../../utils/infoData';
 
 export const MainPage = () => {
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                },
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                },
-            },
-        ],
-    };
 
-    const accordionData = [
-        {
-            heading: 'Гештальт-терапия',
-            content: 'Универсальный метод работы с любыми запросами клиентов, эффективен как для индивидуальных, так и для групповых форматов работы. \n' +
-                'Курс 1-ой ступени включает теорию и методы гештальт-терапии, навыки гештальт-диагностики, принципы работы в обучающих и терапевтических группах. \n' +
-                'Курс 2-ой ступени дает практический опыт и формирует терапевтический стиль.\n',
-            steps: [
-                {
-                    text: '1-я ступень',
-                },
-                {
-                    text: '2-я ступень',
-                },
-                {
-                    text: 'Супервизия',
-                }
-            ]
-        },
-        {
-            heading: 'Гештальт-терапия',
-            content: 'Универсальный метод работы с любыми запросами клиентов, эффективен как для индивидуальных, так и для групповых форматов работы. \n' +
-                'Курс 1-ой ступени включает теорию и методы гештальт-терапии, навыки гештальт-диагностики, принципы работы в обучающих и терапевтических группах. \n' +
-                'Курс 2-ой ступени дает практический опыт и формирует терапевтический стиль.\n',
-            steps: [
-                {
-                    text: '1-я ступень',
-                },
-                {
-                    text: '2-я ступень',
-                },
-                {
-                    text: 'Супервизия',
-                }
-            ]
-        }
-    ]
 
     return (
         <div className={'Page'}>
             <article className={'Page__block Main_first-block'}>
                 <div className={'Main_first-block__text-info'}>
                     <section className={'Main_first-block__label'}>
-                        <span>Обучаем</span>
-                        <span>практике</span>
+                        {
+                            labelTexts.map((item, idx) => (
+                                <span key={idx}>{item}</span>
+                            ))
+                        }
                     </section>
                     <section className={'Main_first-block__slogan'}>
-                        Учебные программы спроектированы с учетом запросов слушателей и требований рынка. Вы учитесь
-                        тому, что актуально сейчас.
+                        {sloganText}
                     </section>
                 </div>
                 <section className={'Main_first-block__urls'}>
                     <ul>
-                        <li>
-                            <Link to="/tacos">Психологические науки</Link>
-                        </li>
-                        <li>
-                            <Link to="/sandwiches">Управление продуктами</Link>
-                        </li>
-                        <li>
-                            <Link to="/sandwiches">Современные технологии</Link>
-                        </li>
+                        {
+                            urlsLinks.map((item, idx) => (
+                                <li key={idx}>
+                                    <Link to={item.path}>{item.children}</Link>
+                                </li>
+                            ))
+                        }
                     </ul>
                 </section>
             </article>
+
             <article className={'Page__block Main_second-block'}>
-                <Slider {...settings} className={'Main_second-block__slider'}>
-                    <Card
-                        title={'Ориентация на практику'}
-                        text={
-                            'Мы выбрали исключительно ' +
-                            'прикладные направления для обучения: ' +
-                            'психологические науки, педагогические науки, ' +
-                            'создание  и управление продуктами. Мастерство в них ' +
-                            'нарабатывается через постоянную практику. Поэтому ' +
-                            'обучение должно давать слушателям помимо знаний качественный ' +
-                            'практический опыт.'
-                        }
-                    />
-                    <Card
-                        title={'Привлечение экспертов'}
-                        text={
-                            'Эксперты, которых мы привлекаем для создания наших образовательных продуктов — гарантия, что получаемый нашими слушателями опыт актуален сегодня. Просто привлечь эксперта — только половина дела. Эксперту важно дать инструменты для передачи своего опыта. В этом помогает современная методология и образовательные технологии.'
-                        }
-                    />
-                    <Card
-                        title={'Постоянное развитие'}
-                        text={
-                            'Мы пришли в наши профессии ради постоянного развития. Экспертиза в них — постоянный вызов и высокая планка качества. Мы учим, как оставаться экспертом на протяжении всего периода карьеры. Наши программы постоянно обновляются с учетом новых реалий нашего мира и изменяющихся запросов. Мы изменяемся и растем вместе.'
-                        }
-                    />
+                <Slider {...caruselSettings} className={'Main_second-block__slider'}>
+                    {
+                        cardsData.map((item, idx) => (
+                            <Card
+                                title={item.title}
+                                text={item.text}
+                                ket={idx}
+                            />
+                        ))
+                    }
                 </Slider>
             </article>
+
+            <BlockLink children={'Более подробно о нашем подходе'} path={''} className={'Page__block'} />
+
+            <BlockTitle children={'Направления обучения'} className={'Page__block'}/>
+
             <article className={'Page__block Main_accordion-block'}>
                 <Accordion items={accordionData} />
             </article>
+
+            <BlockLink children={'Подробнее о направлениях и обучении'} path={''} className={'Page__block'} />
+
+            <BlockTitle children={'Оставайтесь на связи'} className={'Page__block'}/>
+
+            <article className={'Page__block Main_contact-block'} >
+                <section className={'Main_contact-block__text'}>
+                    <p>
+                        Команда ВПШ работает как одна методическая группа. Для разработки образовательных продуктов мы привлекаем исследователей, аналитиков, методологов и экспертов-практиков.
+                    </p>
+                    <p>
+                        Если вы разделяете наши ценности, приглашаем к сотрудничеству на постоянной или проектной форме.
+                    </p>
+                    <p>
+                        Мы можем также разработать образовательный продукт, связанный с психологическими науками для вашей компании или под конкретный запрос.
+                    </p>
+                </section>
+
+                <section className={'Main_contact-block__form'}>
+                    <ContactForm />
+                </section>
+
+            </article>
+
+            <Devider className={'Page__devider'}/>
         </div>
     );
 };

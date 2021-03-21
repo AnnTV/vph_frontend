@@ -14,9 +14,14 @@ import './Accordion.css';
 
 export const Accordion = ({ ...props }) => {
     return (
-        <SuperAccordion className={'Accordion ' + props.className} allowZeroExpanded>
+        <SuperAccordion
+            className={'Accordion ' + props.className}
+            allowZeroExpanded
+            allowMultipleExpanded
+            preExpanded={['uuid_0']}
+        >
             {props.items.map((item, idx) => (
-                <AccordionItem key={idx}>
+                <AccordionItem key={idx} uuid={`uuid_${idx}`}>
                     <AccordionItemHeading>
                         <AccordionItemButton>
                             {item.heading}

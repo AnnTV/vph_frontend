@@ -26,7 +26,7 @@
 
 .Main_first-block__label span {
     font-weight: 500;
-    font-size: 96px;
+    font-size: 80px;
     line-height: 117px;
     letter-spacing: 0.2em;
     color: var(--dark-2)
@@ -36,21 +36,15 @@
     transform: translateX(-10%);
 }
 
-.Main_first-block__label span:first-child::first-letter {
-    font-weight: 900;
-}
-
 .Main_first-block__label span:last-child {
     transform: translateX(10%);
 }
 
 .Main_first-block__urls {
-    padding: 16px 0;
+    padding: 16px 30px 0 32px;
     width: calc(30% - 46px);
     min-width: 340px;
     border-left: 1px solid var(--dark-1);
-    padding-left: 32px;
-    padding-right: 30px;
 
     display: flex;
     align-items: center;
@@ -59,15 +53,15 @@
 
 .Main_first-block__slogan {
     padding: 32px 32px 32px 30px;
-    font-size: 24px;
-    line-height: 24px;
+    font-size: 20px;
+    line-height: 22px;
     letter-spacing: 1.5px;
 }
 
 .Main_first-block__slogan::first-line {
     color: var(--primary-2);
     font-weight: 600;
-    font-size: 28px;
+    font-size: 22px;
 }
 
 .Main_first-block__urls ul {
@@ -128,6 +122,37 @@
     color: var(--primary-1);
 }
 
+.Main_contact-block {
+    display: flex;
+}
+
+.Main_contact-block__text {
+    width: 55%;
+    padding: 32px;
+}
+
+.Main_contact-block__text p {
+    font-size: 16px;
+    line-height: 26px;
+    /* or 150% */
+    font-weight: 300;
+    letter-spacing: 1.5px;
+}
+
+.Main_contact-block__text p:first-child {
+    margin-top: 0;
+}
+
+.Main_contact-block__text p:last-child {
+    font-weight: 600;
+}
+
+.Main_contact-block__form {
+    width: 45%;
+    border-left: 1px solid var(--dark-1);
+    padding: 32px;
+}
+
 @media (max-width: 1024px) {
     .Main_first-block {
         flex-direction: column;
@@ -162,8 +187,8 @@
     }
 
     .Main_first-block__urls {
-        min-width: calc(100vw - 32px);
-        max-width: calc(100vw - 32px);
+        min-width: calc(100vw - 62px);
+        max-width: calc(100vw - 62px);
         border-left: none;
         border-bottom: 1px solid var(--dark-1);
     }
@@ -178,6 +203,8 @@
 
     .Main_first-block__urls {
         padding: 16px;
+        min-width: calc(100vw - 32px);
+        max-width: calc(100vw - 32px);
     }
 
     .Main_first-block__slogan {
@@ -200,6 +227,22 @@
 
     .Main_second-block__slider ul {
         left: 0;
+    }
+
+    .Main_contact-block {
+        flex-direction: column;
+    }
+
+    .Main_contact-block__text {
+        width: calc(100% - 32px);
+        padding: 32px 16px;
+        border-bottom: 1px solid var(--dark-1);
+    }
+
+    .Main_contact-block__form {
+        border-left: none;
+        width: calc(100% - 32px);
+        padding: 32px 16px;
     }
 }
 

@@ -3,9 +3,10 @@
     align-items: center;
     justify-content: center;
 
-    background-image: url("./btn_bg.png");
-    background-position: center;
-    background-size: 200px;
+    background-image: url("./devider.png");
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 80%;
 
     height: 40px;
     width: 200px;
@@ -17,19 +18,24 @@
     font-weight: 600;
     text-decoration: none;
 
-    color: var(--dark-1);
+    color: var(--primary-1);
 
     filter: opacity(0.8);
 
-    transition: 0.3s;
+    transition: 0.5s;
 }
 
 .ButtonLink:hover {
     filter: opacity(1);
-    color: var(--dark-2);
+    color: var(--dark-1);
 }
 
 .ButtonLink:active {
     filter: opacity(0.8);
-    color: var(--dark-1);
+    color: var(--primary-1);
 }
+
+@media (max-width: 1024px) {
+
+}
+

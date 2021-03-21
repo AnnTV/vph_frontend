@@ -12,6 +12,16 @@
 .accordion__button {
     max-width: calc(100% - 36px);
     background-color: var(--light-1);
+
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 45px;
+    /* or 187% */
+
+    letter-spacing: 1.5px;
+
+    display: flex;
+    align-items: center;
 }
 
 .accordion__button:hover {
@@ -35,6 +45,13 @@
 .Accordion__text {
     width: 65%;
     padding: 16px 32px;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 22px;
+    /* or 150% */
+
+    letter-spacing: 1.5px;
+
 }
 
 .Accordion__steps {
@@ -47,7 +64,7 @@
     padding: 16px 32px;
 
     font-size: 18px;
-    line-height: 18px;
+    line-height: 24px;
     font-weight: 600;
     letter-spacing: 1.5px;
     text-transform: uppercase;
