@@ -17,8 +17,6 @@ import { caruselSettings } from '../../utils/utilData';
 import { labelTexts, sloganText, urlsLinks, cardsData, accordionData } from '../../utils/infoData';
 
 export const MainPage = () => {
-
-
     return (
         <div className={'Page'}>
             <article className={'Page__block Main_first-block'}>
@@ -69,20 +67,17 @@ export const MainPage = () => {
                 <Accordion items={accordionData} />
             </article>
 
-            <BlockLink children={'Подробнее о направлениях и обучении'} path={''} className={'Page__block'} />
+            <BlockLink children={'Подробнее о направлении и обучении'} path={''} className={'Page__block'} />
 
             <BlockTitle children={'Оставайтесь на связи'} className={'Page__block'}/>
 
             <article className={'Page__block Main_contact-block'} >
                 <section className={'Main_contact-block__text'}>
                     <p>
-                        Команда ВПШ работает как одна методическая группа. Для разработки образовательных продуктов мы привлекаем исследователей, аналитиков, методологов и экспертов-практиков.
+                        Мы собрали команду единомышленников и работаем как одна методическая группа для разработки программ.
                     </p>
                     <p>
-                        Если вы разделяете наши ценности, приглашаем к сотрудничеству на постоянной или проектной форме.
-                    </p>
-                    <p>
-                        Мы можем также разработать образовательный продукт, связанный с психологическими науками для вашей компании или под конкретный запрос.
+                        Если вы разделяете наши ценности, приглашаем к сотрудничеству на постоянной или проектной основе, напишите нам.
                     </p>
                 </section>
 

@@ -30,7 +30,11 @@ export const Accordion = ({ ...props }) => {
                     <AccordionItemPanel>
                         <div className={'Accordion__panel'}>
                             <div className={'Accordion__text'}>
-                                {item.content}
+                                {
+                                    item.content.map((item, idx) => (
+                                      <p key={idx}>{item}</p>
+                                    ))
+                                }
                             </div>
                             <div className={'Accordion__steps'}>
                                 {

@@ -3,7 +3,7 @@
 }
 
 .Main_first-block__text-info {
-    width: calc(70%);
+    width: calc(55%);
     min-width: calc(120px + 600px + 78px);
 }
 
@@ -59,7 +59,7 @@
 
 .Main_first-block__urls {
     padding: 16px 30px 0 32px;
-    width: calc(30% - 46px);
+    width: calc(45% - 46px);
     min-width: 340px;
     border-left: 1px solid var(--dark-1);
 
@@ -129,10 +129,6 @@
 .Main_second-block__slider {
     width: 90%;
     padding: 30px;
-}
-
-.Main_second-block .Card {
-    height: 100%;
 }
 
 .Main_second-block__slider button::before {
@@ -244,6 +240,12 @@
 
     .Main_second-block__slider ul {
         left: 0;
+    }
+
+    .Main_first-block__urls ul li .Link {
+        font-size: 11px;
+        line-height: 14px;
+        letter-spacing: 1.5px;
     }
 
     .Main_contact-block {
