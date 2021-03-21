@@ -63,8 +63,8 @@
     }
 
     .Footer__info-block {
-        width: 100%;
         padding: 16px;
+        width: calc(100% - 32px);
     }
 
     .Footer div .Footer__logo-block + div {
