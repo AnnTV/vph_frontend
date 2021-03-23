@@ -2,6 +2,8 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 
 import { MainPage } from '../pages/Main/Main';
+import { EducationPage } from '../pages/Education/Education';
+import { AboutPage } from '../pages/About/About';
 
 export const routes = [
     {
@@ -12,7 +14,7 @@ export const routes = [
     {
         path: '/education',
         text: 'Образование',
-        component: MainPage,
+        component: EducationPage,
     },
     {
         path: '/services',
@@ -22,7 +24,7 @@ export const routes = [
     {
         path: '/about',
         text: 'О нас',
-        component: MainPage,
+        component: AboutPage,
     },
     {
         path: '/news',
@@ -32,6 +34,11 @@ export const routes = [
     {
         path: '/contacts',
         text: 'Контакты',
+        component: MainPage,
+    },
+    {
+        path: '/our_view',
+        text: 'Наш подход',
         component: MainPage,
     },
 ];

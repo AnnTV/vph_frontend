@@ -59,7 +59,7 @@ export const MainPage = () => {
                 </Slider>
             </article>
 
-            <BlockLink children={'Более подробно о нашем подходе'} path={''} className={'Page__block'} />
+            <BlockLink children={'Более подробно о нашем подходе'} path={'/about'} className={'Page__block'} />
 
             <BlockTitle children={'Направления обучения'} className={'Page__block'}/>
 

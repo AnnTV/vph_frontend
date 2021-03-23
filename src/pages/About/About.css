@@ -1,0 +1,85 @@
+.About__main-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: underline;
+    padding: 32px 32px;
+
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 36px;
+    letter-spacing: 3px;
+    color: var(--primary-1);
+    max-width: calc(100% - 64px);
+}
+
+.About__main-info {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+    max-width: calc(100% - 64px);
+    height: max-content;
+}
+
+.About__main-info div {
+    padding: 32px 0;
+    height: 100%;
+}
+
+.About__main-info div:first-child {
+    padding-right: 32px;
+}
+
+.About__main-info div:first-child p:first-child {
+    font-weight: 900;
+    font-size: 18px;
+    color: var(--primary-2);
+}
+
+.About__main-info div:first-child p:last-child {
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.5em;
+}
+
+.About__main-info div:last-child {
+    padding-left: 32px;
+    border-left: 1px solid var(--dark-1);
+}
+
+.About__main-info div:last-child > span {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: 1.5px;
+    color: var(--primary-1);
+}
+
+.About__main-info div:last-child ul {
+    list-style-type: square;
+}
+
+.About__main-info div:last-child ul li {
+    margin-bottom: 8px;
+}
+
+.About__main-slogan {
+    padding: 16px 32px;
+    max-width: calc(100% - 64px);
+}
+
+.About__main-slogan > span {
+    margin-right: 8px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: 1.5px;
+    color: var(--primary-2);
+}
+
+.About__our-view {
+    padding: 16px 102px;
+    max-width: calc(100% - 204px);
+}
