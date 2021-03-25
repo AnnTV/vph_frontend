@@ -6,6 +6,7 @@ import './App.css';
 
 import { Header } from './components/Header/Header';
 import { Footer } from './components/Footer/Footer';
+import ScrollToTop from './utils/ScrollToTop';
 
 class App extends Component {
     state = { users: [] };
@@ -27,12 +28,14 @@ class App extends Component {
         return (
             <Router className="App" id="outer-container">
                 <Header />
-                <Switch id={'page-id'}>
-                    {routes.map((route, i) => (
-                        <RouteWithSubRoutes key={i} {...route} />
-                    ))}
-                    <Redirect from="/" to="/main" />
-                </Switch>
+                <ScrollToTop>
+                    <Switch id={'page-id'}>
+                        {routes.map((route, i) => (
+                            <RouteWithSubRoutes key={i} {...route} />
+                        ))}
+                        <Redirect from="/" to="/main" />
+                    </Switch>
+                </ScrollToTop>
                 <Footer />
             </Router>
         );

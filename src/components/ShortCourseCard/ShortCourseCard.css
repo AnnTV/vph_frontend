@@ -1,0 +1,24 @@
+.ShortCourseCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    border: 1px solid var(--dark-1);
+    padding: 1em;
+    height: 70%;
+}
+
+.ShortCoursCard__title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 45px;
+    /* or 187% */
+
+    text-align: center;
+    letter-spacing: 1.5px;
+    color: var(--primary-1);
+}
+
+.ShortCourseCard .Link {
+    align-self: flex-end;
+}

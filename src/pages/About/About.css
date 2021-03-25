@@ -3,14 +3,14 @@
     align-items: center;
     justify-content: center;
     text-decoration: underline;
-    padding: 32px 32px;
+    padding: 32px calc(5% + 30px);
 
     font-weight: 500;
     font-size: 32px;
     line-height: 36px;
     letter-spacing: 3px;
     color: var(--primary-1);
-    max-width: calc(100% - 64px);
+    max-width: calc(100% - 2 * calc(5% + 30px));
 }
 
 .About__main-info {
@@ -18,8 +18,8 @@
     flex: 1;
     align-items: center;
     justify-content: space-between;
-    padding: 0 32px;
-    max-width: calc(100% - 64px);
+    padding: 0 calc(5% + 30px);
+    max-width: calc(100% - 2 * calc(5% + 30px));
     height: max-content;
 }
 
@@ -66,8 +66,8 @@
 }
 
 .About__main-slogan {
-    padding: 16px 32px;
-    max-width: calc(100% - 64px);
+    padding: 16px calc(5% + 30px);
+    max-width: calc(100% - 2 * calc(5% + 30px));
 }
 
 .About__main-slogan > span {
@@ -80,6 +80,86 @@
 }
 
 .About__our-view {
-    padding: 16px 102px;
-    max-width: calc(100% - 204px);
+    padding: 16px calc(5% + 30px);
+    max-width: calc(100% - 2 * calc(5% + 30px));
+}
+
+.About_accordion-block {
+    padding: 48px 0;
+}
+
+.About_accordion {
+    padding: 0 calc(5% + 30px);
+    width: calc(100% - 2 * calc(5% + 30px));
+}
+
+.About_accordion__panel {
+    padding: 16px 32px;
+}
+
+.About_accordion__text {
+    line-height: 1.5em;
+}
+
+.About_accordion__text .Link {
+    margin-left: 8px;
+}
+
+.About_accordion__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-left: 8px;
+}
+
+.accordion__button[aria-expanded="true"] {
+    background-color: var(--primary-2);
+}
+
+.About_team-block {
+    padding: 32px calc(5% + 30px);
+    width: calc(100% - 2 * calc(5% + 30px));
+    max-width: calc(100% - 2 * calc(5% + 30px));
+}
+
+.About_team-block__slider button::before {
+    color: var(--primary-1);
+}
+
+.About_team-block__slider .slick-track {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 1024px) {
+
+}
+
+@media (max-width: 767px) {
+    .About__main-info {
+        flex-direction: column;
+        padding: 0 16px;
+        max-width: calc(100% - 32px);
+    }
+
+    .About__main-info div {
+        padding: 32px;
+        width: 100%;
+    }
+
+    .About__main-info div:last-child {
+        border-left: none;
+        border-top: 1px solid var(--dark-1);
+    }
+
+    .About__main-slogan {
+        padding: 16px;
+        max-width: calc(100% - 32px);
+    }
+
+    .About__our-view {
+        padding: 32px 16px;
+        max-width: calc(100% - 32px);
+    }
 }

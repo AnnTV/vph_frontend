@@ -41,6 +41,11 @@ export const routes = [
         text: 'Наш подход',
         component: MainPage,
     },
+    {
+        path: '/short_course/:id',
+        text: 'Образование',
+        component: EducationPage,
+    },
 ];
 
 export const RouteWithSubRoutes = (route) => {

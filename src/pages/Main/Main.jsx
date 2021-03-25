@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import React from 'react';
 
-import { Link } from '../../components/Link/Link';
+import { Link, NavHashLink } from '../../components/Link/Link';
 import Slider from 'react-slick';
 import { Card } from '../../components/Card/Card';
 import { Accordion } from '../../components/Accordion/Accordion';
@@ -37,7 +37,7 @@ export const MainPage = () => {
                         {
                             urlsLinks.map((item, idx) => (
                                 <li key={idx}>
-                                    <Link to={item.path}>{item.children}</Link>
+                                    <NavHashLink path={item.path}>{item.children}</NavHashLink>
                                 </li>
                             ))
                         }
@@ -67,7 +67,7 @@ export const MainPage = () => {
                 <Accordion items={accordionData} />
             </article>
 
-            <BlockLink children={'Подробнее о направлении и обучении'} path={''} className={'Page__block'} />
+            <BlockLink children={'Подробнее о направлении и обучении'} path={'/education'} className={'Page__block'} />
 
             <BlockTitle children={'Оставайтесь на связи'} className={'Page__block'}/>
 
