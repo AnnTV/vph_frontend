@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom';
 import { MainPage } from '../pages/Main/Main';
 import { EducationPage } from '../pages/Education/Education';
 import { AboutPage } from '../pages/About/About';
+import { ShortCourses } from '../pages/ShortCourses/ShortCourses';
 
 export const routes = [
     {
@@ -44,7 +45,7 @@ export const routes = [
     {
         path: '/short_course/:id',
         text: 'Образование',
-        component: EducationPage,
+        component: ShortCourses,
     },
 ];
 

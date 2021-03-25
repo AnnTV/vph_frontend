@@ -3,7 +3,10 @@ import './BlockSubTitle.css';
 
 export const BlockSubTitle = ({ ...props }) => {
     return (
-        <div className={'BlockSubTitle ' + props.className} id={props.id}>
+        <div
+            className={'BlockSubTitle ' + props.className + (props.level ? ` BlockSubTitle_level_${props.level}` : '')}
+            id={props.id}
+        >
             {props.children}
         </div>
     );

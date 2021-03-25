@@ -10,12 +10,6 @@ import './Education.css';
 import { ShortCourseCard } from '../../components/ShortCourseCard/ShortCourseCard';
 
 export const EducationPage = () => {
-
-    const layoutOfCards = shortCourses.map(item => (
-        {i: item.id, x: 0, y: 0, w: 1, h: 2, static: true}
-    ));
-
-
     return (
         <div className={'Page'}>
             <BlockTitle

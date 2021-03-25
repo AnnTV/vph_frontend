@@ -13,6 +13,11 @@
   border-bottom: 1px solid var(--dark-1);
 }
 
+.Page__block__text {
+  padding: 0 calc(5% + 30px);
+  width: calc(100% - 2 * calc(5% + 30px));
+}
+
 .Page__devider {
   display: flex;
   justify-content: center;
@@ -24,4 +29,10 @@
   .Page__block {
     overflow-x: hidden;
   }
+
+  .Page__block__text {
+    padding: 0 calc(5% + 30px);
+    width: calc(100% - 2 * calc(5% + 30px));
+  }
+
 }
