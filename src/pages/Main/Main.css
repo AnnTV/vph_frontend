@@ -2,6 +2,12 @@
     display: flex;
 }
 
+.Main .BlockTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .Main_first-block__text-info {
     width: calc(70%);
     min-width: calc(120px + 600px + 78px);

@@ -4,7 +4,7 @@
     margin: 0 16px;
     display: flex;
     align-items: center;
-    height: 500px;
+    height: max-content;
 }
 
 .TeamCard__name {
@@ -16,9 +16,15 @@
 }
 
 .TeamCard__avatar {
-    height: 80%;
+    width: 450px;
+    min-width: 450px;
+    height: 450px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     margin-bottom: 16px;
-    box-shadow: 0 14px 28px rgba(0,0,0,0.15), 0 10px 10px rgba(0,0,0,0.12);;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.15), 0 10px 10px rgba(0,0,0,0.12);
+    border-radius: 250px;
 }
 
 .TeamCard__body {
@@ -40,18 +46,20 @@
 
 @media (max-width: 1024px) {
     .TeamCard__avatar {
-        height: auto;
-        width: 35vw;
+        width: 300px;
+        min-width: 300px;
+        height: 300px;
     }
 }
 
 @media (max-width: 767px) {
     .TeamCard {
         flex-direction: column;
-        height: 1080px;
     }
+
     .TeamCard__avatar {
-        height: auto;
         width: calc(100vw - 164px);
+        min-width: calc(100vw - 164px);;
+        height: calc(100vw - 164px);
     }
 }

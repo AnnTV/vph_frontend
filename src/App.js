@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Redirect } from 'react-router-dom';
+import { NotificationContainer } from 'react-notifications';
 import { routes, RouteWithSubRoutes } from './utils/routes';
 import { apiUsers } from './utils/api';
 import './App.css';
@@ -7,6 +8,8 @@ import './App.css';
 import { Header } from './components/Header/Header';
 import { Footer } from './components/Footer/Footer';
 import ScrollToTop from './utils/ScrollToTop';
+
+import 'react-notifications/dist/react-notifications.css';
 
 class App extends Component {
     state = { users: [] };
@@ -37,6 +40,7 @@ class App extends Component {
                     </Switch>
                 </ScrollToTop>
                 <Footer />
+                <NotificationContainer/>
             </Router>
         );
     }

@@ -34,12 +34,62 @@
     margin-bottom: 8px;
 }
 
+.ShortCourse__block-info__ps {
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 14px;
+}
+
 .ShortCourse__block-info__author {
     display: flex;
     flex-direction: column;
     padding: 32px calc(5% + 30px) 32px 32px;
     background-color: var(--light-2);
     width: calc(40% - 32px - calc(5% + 30px));
+
+    align-items: center;
+}
+
+.ShortCourse__block-info__author .ShortCourse__block-info__title {
+    align-self: flex-start;
+}
+
+.ShortCourse__block-info__author-img {
+    width: 22vw;
+    height: 22vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    border-radius: 250px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.15), 0 10px 10px rgba(0,0,0,0.12);
+    margin: 16px 0;
+}
+
+.ShortCourse__block-info__author-img__irina_isaeva {
+    background-image: url('../../images/team/irina_isaeva.jpg');
+}
+
+.ShortCourse__block-info__name {
+    margin-top: 16px;
+
+    font-size: 22px;
+    line-height: 22px;
+}
+
+.Course_contact-block {
+    padding: 32px calc(5% + 30px);
+    width: calc(100% - 2 * calc(5% + 30px));
+    max-width: calc(100% - 2 * calc(5% + 30px));
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Course_contact-block__form {
+    width: 80%;
+    max-width: 600px;
 }
 
 @media (max-width: 767px) {
@@ -61,5 +111,29 @@
 
     .ShortCourse__block-info__author {
         padding: 32px;
+    }
+
+    .ShortCourse__block-info__author {
+        display: flex;
+        flex-direction: column;
+        padding: 32px 16px;
+        width: calc(100% - 32px);
+    }
+
+    .ShortCourse__block-info__author-img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .Course_contact-block {
+        padding: 32px 0;
+        width: 100%;
+        max-width: 100% ;
+    }
+
+    .Course_contact-block__form {
+        padding: 0 16px;
+        width: calc(100% - 32px);
+        max-width: 600px;
     }
 }

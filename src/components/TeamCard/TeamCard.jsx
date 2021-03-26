@@ -5,7 +5,7 @@ import './TeamCard.css';
 export const TeamCard = ({ ...props }) => {
     return (
         <div className={'TeamCard ' + props.className}>
-            <img className={'TeamCard__avatar'} src={process.env.PUBLIC_URL + 'images/team/' + props.avatar} />
+            <div className={'TeamCard__avatar'} style={{backgroundImage: `url("../../images/team/${props.avatar}")`}} />
             <div className={'TeamCard__body'}>
                 <span className={'TeamCard__name'}>{props.name}</span>
                 <Devider width={240} />

@@ -14,7 +14,7 @@ export const Navbar = ({ ...props }) => {
     return (
         <>
             <nav className={'Navbar ' + props.className}>
-                {routes.slice(0, 5).map((item, idx) => (
+                {routes.slice(0, 3).map((item, idx) => (
                     <NavLink path={item.path} children={item.text} className={'Navbar_link'} activeClassName="active" />
                 ))}
             </nav>
@@ -26,7 +26,7 @@ export const Navbar = ({ ...props }) => {
                 className={'BurgerMenu'}
                 outerContainerId={'outer-container'}
             >
-                {routes.map((item, idx) => (
+                {routes.slice(0, 4).map((item, idx) => (
                     <NavLink
                         path={item.path}
                         children={item.text}

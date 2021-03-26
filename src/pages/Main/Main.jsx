@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import React from 'react';
 
-import { Link, NavHashLink } from '../../components/Link/Link';
+import { NavHashLink } from '../../components/Link/Link';
 import Slider from 'react-slick';
 import { Card } from '../../components/Card/Card';
 import { Accordion } from '../../components/Accordion/Accordion';
@@ -18,7 +18,11 @@ import { labelTexts, sloganText, urlsLinks, cardsData, accordionData } from '../
 
 export const MainPage = () => {
     return (
-        <div className={'Page'}>
+        <div className={'Page Main'}>
+            <BlockTitle
+                children={'Высшая психологическая школа'}
+                className={'Page__block'}
+            />
             <article className={'Page__block Main_first-block'}>
                 <div className={'Main_first-block__text-info'}>
                     <section className={'Main_first-block__label'}>

@@ -5,6 +5,7 @@ import { MainPage } from '../pages/Main/Main';
 import { EducationPage } from '../pages/Education/Education';
 import { AboutPage } from '../pages/About/About';
 import { ShortCourses } from '../pages/ShortCourses/ShortCourses';
+import { Contacts } from '../pages/Contacts/Contacts';
 
 export const routes = [
     {
@@ -18,23 +19,23 @@ export const routes = [
         component: EducationPage,
     },
     {
-        path: '/services',
-        text: 'Услуги',
-        component: MainPage,
-    },
-    {
         path: '/about',
         text: 'О нас',
         component: AboutPage,
     },
     {
-        path: '/news',
-        text: 'Новости',
+        path: '/contacts',
+        text: 'Контакты',
+        component: Contacts,
+    },
+    {
+        path: '/services',
+        text: 'Услуги',
         component: MainPage,
     },
     {
-        path: '/contacts',
-        text: 'Контакты',
+        path: '/news',
+        text: 'Новости',
         component: MainPage,
     },
     {
