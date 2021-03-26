@@ -55,6 +55,7 @@
 @media (max-width: 767px) {
     .TeamCard {
         flex-direction: column;
+        border: none;
     }
 
     .TeamCard__avatar {

@@ -6,6 +6,7 @@ import { EducationPage } from '../pages/Education/Education';
 import { AboutPage } from '../pages/About/About';
 import { ShortCourses } from '../pages/ShortCourses/ShortCourses';
 import { Contacts } from '../pages/Contacts/Contacts';
+import { News } from '../pages/News/News';
 
 export const routes = [
     {
@@ -24,6 +25,11 @@ export const routes = [
         component: AboutPage,
     },
     {
+        path: '/news',
+        text: 'Новости',
+        component: News,
+    },
+    {
         path: '/contacts',
         text: 'Контакты',
         component: Contacts,
@@ -31,11 +37,6 @@ export const routes = [
     {
         path: '/services',
         text: 'Услуги',
-        component: MainPage,
-    },
-    {
-        path: '/news',
-        text: 'Новости',
         component: MainPage,
     },
     {

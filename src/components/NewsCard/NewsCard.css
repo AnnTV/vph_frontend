@@ -1,0 +1,106 @@
+.NewsCard {
+    --type-color: rgba(166, 186, 135, 0.4);
+
+    border: 1px solid var(--dark-1);
+    margin: 0 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color ease-in-out 0.3s;
+    width: calc(50vw - 164px);
+    min-width: 260px;
+}
+
+.NewsCard__title {
+    overflow: hidden;
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: 1.5px;
+    margin-bottom: 16px;
+
+    color: var(--primary-1);
+    flex-wrap: nowrap;
+    max-height: 1em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.NewsCard__type {
+    width: 80%;
+    background-color: var(--type-color);
+    padding: 8px;
+    align-self: flex-start;
+
+    font-weight: 600;
+}
+
+.NewsCard > div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.NewsCard__main-info {
+    padding: 16px;
+    width: calc(100% - 32px);
+    display: flex;
+    flex-direction: column;
+}
+
+.NewsCard__main-info div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.NewsCard__main-info div .Icon {
+    margin-right: 8px;
+}
+
+.NewsCard__main-info strong {
+    margin-right: 8px;
+    letter-spacing: 1.5px;
+}
+
+.NewsCard__cost-and-more {
+    border-top: 1px solid var(--dark-1);
+    padding: 16px;
+    width: calc(100% - 32px);
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 1024px) {
+    .NewsCard {
+        padding: 8px;
+        margin: 0;
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    .NewsCard {
+        padding: 8px;
+        margin: 0;
+        width: calc(100% - 16px);
+    }
+}
+
+@media (max-width: 512px) {
+    .NewsCard__main-info-details {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start!important;
+        justify-content: flex-start!important;
+        margin-bottom: 8px;
+    }
+
+    .NewsCard__cost-and-more {
+        flex-direction: column;
+        align-items: flex-start!important;
+        justify-content: flex-start!important;
+    }
+}

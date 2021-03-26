@@ -208,3 +208,29 @@ export const shortCourses = [
         title: 'Хорошие контракты',
     }
 ];
+
+
+export const newsCards = [
+    {
+        id: 0,
+        type: 'Краткосрочный курс',
+        title: 'Хорошие контракты',
+        start: '03.04.2021',
+        duration: '6 часов',
+        author: 'Елена Станковская',
+        document: 'Диплом',
+        cost: '5 000',
+        path: '/short_course/3'
+    },
+    {
+        id: 1,
+        type: 'Краткосрочный курс',
+        title: 'Феноменология: искусство интересоваться клиентами',
+        start: '10.04.2021',
+        duration: '6 часов',
+        author: 'Елена Станковская',
+        document: 'Диплом',
+        cost: '5 000',
+        path: '/short_course/2'
+    },
+]
