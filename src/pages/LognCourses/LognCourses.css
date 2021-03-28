@@ -34,7 +34,12 @@
     margin-bottom: 32px;
 }
 
-.LongCourse__block-info__course ul li {
+.LongCourse__block-info__course ol {
+    margin-bottom: 32px;
+}
+
+.LongCourse__block-info__course ul li,
+.LongCourse__block-info__course ol li{
     margin-bottom: 8px;
 }
 
@@ -48,13 +53,20 @@
     margin-top: 16px;
 }
 
+.LongCourse__block-info__main i {
+    margin-right: 8px;
+}
+
 .LongCourse__block-info__course .Devider {
     align-self: center;
 }
 
-.LongCourse__block-info__main + .Devider,
-.LongCourse__block-info__ps + .Devider {
+.LongCourse__block-info__summary + .Devider {
     margin-top: 32px;
+}
+
+.LongCourse__block-info__summary .Page__block__text__info {
+    font-size: 16px;
 }
 
 .LongCourse__block-info__author {

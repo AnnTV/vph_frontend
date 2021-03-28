@@ -1,6 +1,6 @@
 import React from 'react';
 import './NewsCard.css';
-import { Link } from '../Link/Link';
+import { HashLink } from '../Link/Link';
 import { AuthorIcon } from '../Icon/AuthorIcon';
 import { CalendarIcon } from '../Icon/CalendarIcon';
 import { TimeIcon } from '../Icon/TimeIcon';
@@ -49,7 +49,7 @@ export const NewsCard = ({ ...props }) => {
 
                 <div className={'NewsCard__cost-and-more'}>
                     <span className={'NewsCard__text'}>{props.children.cost} РУБ</span>
-                    <Link path={props.children.path} children={'Подробнее...'} />
+                    <HashLink path={props.children.path} children={'Подробнее...'} />
                 </div>
             </div>
         </div>

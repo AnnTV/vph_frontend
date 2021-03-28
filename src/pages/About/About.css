@@ -132,6 +132,48 @@
     align-items: center;
 }
 
+.Accordion {
+    width: calc(90% - 60px);
+    padding: 30px;
+    min-width: 600px;
+}
+
+.accordion__heading {
+    width: 100%;
+    border-bottom: 1px solid var(--dark-1);
+}
+
+.accordion__button {
+    max-width: calc(100% - 36px);
+    background-color: var(--light-1);
+
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 45px;
+    /* or 187% */
+
+    letter-spacing: 1.5px;
+
+    display: flex;
+    align-items: center;
+
+    transition: all ease-in-out 0.5s;
+}
+
+.accordion__button:hover {
+    background-color: var(--primary-2);
+    filter: opacity(0.8);
+}
+
+.accordion__item {
+    border: 1px solid var(--dark-1);
+}
+
+.accordion__panel {
+    padding: 0;
+    transition: all ease-in-out 1s;
+}
+
 @media (max-width: 1024px) {
 
 }
@@ -169,17 +211,27 @@
         max-width: calc(100% - 0px);
     }
 
-    .About_team-block .slick-slide .slick-track {
-        width: 100%;
+    .About_team-block .slick-slide {
+        width: 100vw !important;
+        padding: 0 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .About_team-block__slider .slick-track {
         width: 100%;
         max-width: 100vw;
+        min-width: 100vw;
     }
 
     .About_team-block .slick-arrow {
         display: none !important;
     }
 
+    .About_accordion {
+        width: 100%;
+        padding: 0;
+    }
 }
+

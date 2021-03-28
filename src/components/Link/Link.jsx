@@ -6,7 +6,12 @@ import './Link.css';
 
 export const NavLink = ({ ...props }) => {
     return (
-        <RouterLink to={props.path} className={'Link ' + props.className} activeClassName="active">
+        <RouterLink
+            to={props.path}
+            className={'Link ' + props.className}
+            activeClassName="active"
+            onClick={props.onClick}
+        >
             {props.children}
         </RouterLink>
     );
@@ -14,7 +19,12 @@ export const NavLink = ({ ...props }) => {
 
 export const ALink = ({ ...props }) => {
     return (
-        <a href={props.path} className={'Link ' + props.className} target={'_blank'}>
+        <a
+            href={props.path}
+            className={'Link ' + props.className}
+            target={'_blank'}
+            onClick={props.onClick}
+        >
             {props.children}
         </a>
     );
@@ -22,7 +32,11 @@ export const ALink = ({ ...props }) => {
 
 export const Link = ({ ...props }) => {
     return (
-        <NormalLink to={props.path} className={'Link ' + props.className}>
+        <NormalLink
+            to={props.path}
+            className={'Link ' + props.className}
+            onClick={props.onClick}
+        >
             {props.children}
         </NormalLink>
     );
@@ -30,7 +44,12 @@ export const Link = ({ ...props }) => {
 
 export const HashLink = ({ ...props }) => {
     return (
-        <BaseHashLink smooth to={props.path} className={'Link ' + props.className}>
+        <BaseHashLink
+            smooth
+            to={props.path}
+            className={'Link ' + props.className}
+            onClick={props.onClick}
+        >
             {props.children}
         </BaseHashLink>
     );
@@ -43,6 +62,7 @@ export const NavHashLink = ({ ...props }) => {
             to={props.path}
             className={'Link ' + props.className}
             activeClassName="active"
+            onClick={props.onClick}
         >
             {props.children}
         </BaseNavHashLink>

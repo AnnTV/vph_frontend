@@ -39,6 +39,7 @@
 .Page__block__text__info {
   display: flex;
   font-size: 18px;
+  align-items: center;
 }
 
 .Page__block__text__info .Icon {

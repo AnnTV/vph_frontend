@@ -4,11 +4,6 @@
     justify-content: center;
 }
 
-.Education_accordion {
-    padding: 0 calc(5% + 30px);
-    width: calc(100% - 2 * calc(5% + 30px));
-}
-
 .Education__short_courses {
     padding: 32px 0;
 }
@@ -50,5 +45,16 @@
         height: 145px;
         flex-grow: 1;
         margin: 2px 0;
+    }
+
+    .Education_accordion-block {
+        padding: 32px 0;
+        width: 100%;
+    }
+
+    .Education_accordion-block .Accordion {
+        padding: 0;
+        width: 100%;
+        min-width: 100px;
     }
 }
