@@ -11,6 +11,7 @@ import { ArrowDownIcon } from '../Icon';
 
 import 'react-accessible-accordion/dist/fancy-example.css';
 import './Accordion.css';
+import { NavHashLink } from '../Link/Link';
 
 export const Accordion = ({ ...props }) => {
     return (
@@ -40,7 +41,11 @@ export const Accordion = ({ ...props }) => {
                                 {
                                     item.steps.map((step, idx) => (
                                         <div className={'Accordion__steps__step'}>
-                                            <span>{step.text}</span>
+                                            <NavHashLink
+                                                path={`/education/long_course/${item.id}#step_${step.id}`}
+                                            >
+                                                {step.text}
+                                            </NavHashLink>
                                             {idx !== (item.steps.length - 1) &&
                                                 <ArrowDownIcon width={24} height={24} />
                                             }

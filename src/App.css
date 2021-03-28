@@ -18,6 +18,41 @@
   width: calc(100% - 2 * calc(5% + 30px));
 }
 
+.Page__block__text__header {
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+}
+
+.Page__block__text__header strong {
+  margin-bottom: 8px;
+}
+
+.Page__block__text__header span {
+  color: var(--primary-1);
+}
+
+.Page__block__text__header .Link {
+  margin-top: 8px;
+}
+
+.Page__block__text__info {
+  display: flex;
+  font-size: 18px;
+}
+
+.Page__block__text__info .Icon {
+  margin-right: 8px;
+}
+
+.Page__block__text__info + .Page__block__text__info {
+  margin-top: 8px;
+}
+
+.Page__block__text__info strong {
+  margin-right: 8px;
+}
+
 .Page__devider {
   display: flex;
   justify-content: center;

@@ -9,9 +9,9 @@ const footerData = {
         'Офис № 521',
     ],
     contacts: [
-        'info@hpschool',
-        '+7 (995) 895 21 67',
-        '+7 (916) 348 23 53',
+        'Info@psyschool.com.ru',
+        '+7 (985)-054-4664',
+        '+7 (995)-895-2167',
     ]
 };
 

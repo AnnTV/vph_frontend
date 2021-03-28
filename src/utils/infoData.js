@@ -39,6 +39,7 @@ export const cardsData = [
 
 export const accordionData = [
     {
+        id: 0,
         heading: 'Гештальт-терапия',
         content: [
             'Универсальный метод работы с любыми запросами клиентов, эффективен как для индивидуальных, так и для групповых форматов работы.',
@@ -47,12 +48,15 @@ export const accordionData = [
         ],
         steps: [
             {
+                id: '0',
                 text: '1-я ступень',
             },
             {
+                id: '1',
                 text: '2-я ступень',
             },
             {
+                id: '2',
                 text: 'супервизия',
             }
         ]
@@ -66,15 +70,19 @@ export const accordionData = [
         ],
         steps: [
             {
+                id: '0',
                 text: 'базовый курс',
             },
             {
+                id: '1',
                 text: 'клинический курс',
             },
             {
+                id: '2',
                 text: 'супервизия (эа)',
             },
             {
+                id: '3',
                 text: 'интервизия (эа)',
             }
         ]
@@ -88,9 +96,11 @@ export const accordionData = [
         ],
         steps: [
             {
+                id: '0',
                 text: 'базовый курс',
             },
             {
+                id: '1',
                 text: 'супервизия',
             },
         ]

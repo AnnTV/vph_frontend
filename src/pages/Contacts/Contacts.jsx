@@ -22,9 +22,9 @@ export const Contacts = () => {
                     <div>Офис № 521</div>
                     <br />
                     <span className={'Contacts__block-info__title'}>Контакты</span>
-                    <div><strong>Email:</strong> <span>info@hpschool</span></div>
-                    <div><strong>Тел.:</strong> <span>+7 (916) 348 23 53</span></div>
-                    <div><strong>Тел.:</strong> <span>+7 (995) 895 21 67</span></div>
+                    <div><strong>Email:</strong> <span>Info@psyschool.com.ru</span></div>
+                    <div><strong>Тел.:</strong> <span>+7 (985)-054-4664</span></div>
+                    <div><strong>Тел.:</strong> <span>+7 (995)-895-2167</span></div>
                 </div>
                 <YMaps className={'Contacts__map-block'}>
                     <Map className={'Contacts__map'} defaultState={{ center: [55.781261, 37.603666], zoom: 14 }} >

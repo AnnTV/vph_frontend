@@ -6,7 +6,7 @@ export const ShortCourseCard = ({ ...props }) => {
     return (
         <div className={'ShortCourseCard ' + props.className}>
             <span className={'ShortCoursCard__title'}>{props.title}</span>
-            <Link path={'/short_course/' + props.id} children={'Подробнее...'} />
+            <Link path={'/education/short_course/' + props.id} children={'Подробнее...'} />
         </div>
     );
 };
