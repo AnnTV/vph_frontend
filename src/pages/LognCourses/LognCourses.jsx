@@ -446,7 +446,7 @@ const LongCourse = ({...props}) => {
             return (
                 <>
                     <BlockTitle
-                        children={`Курс под номером ${props.id} не найден`}
+                        children={`Длинный курс под номером ${props.id} не найден`}
                         className={'Page__block'}
                     />
                 </>
