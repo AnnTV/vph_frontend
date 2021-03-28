@@ -1,6 +1,7 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
+
 import * as yup from "yup";
 import 'yup-phone';
 
@@ -8,6 +9,7 @@ import { contactFormErrors } from '../../utils/utilData';
 import './CourseForm.css';
 import axios from 'axios';
 import { NotificationManager } from 'react-notifications';
+import { courseOptions } from '../../utils/infoData';
 
 export const CourseForm = ({ ...props }) => {
     const schema = yup.object().shape({
@@ -15,7 +17,7 @@ export const CourseForm = ({ ...props }) => {
         secondName: yup.string().required(),
         email: yup.string().required().email(),
         phone: yup.string().required().phone(),
-        massage: yup.string()
+        massage: yup.string(),
     });
 
     const { register, handleSubmit, errors, reset } = useForm({
@@ -24,7 +26,7 @@ export const CourseForm = ({ ...props }) => {
 
     const submitHandler = data => {
         console.log(data);
-        console.log(props.course)
+        console.log(data.course)
 
         // eslint-disable-next-line max-len
         const appLink = "https://script.google.com/macros/s/AKfycbxP87HSco4soeNN3o5cZNKkUI_k8XFZpZIVcs3v_3In9lN9qAiqoTt-_g2AvmL2c-Uo/exec";
@@ -35,7 +37,7 @@ export const CourseForm = ({ ...props }) => {
         formData.append('email', data.email);
         formData.append('телефон', data.phone);
         formData.append('сообщение', data.massage);
-        formData.append('курс', props.course);
+        formData.append('курс', data.course);
 
         axios.post(appLink, formData)
             .then(response => {
@@ -93,6 +95,15 @@ export const CourseForm = ({ ...props }) => {
                     placeholder={'Телефон'}
                     className={errors.phone ? 'Input-error' : ''}
                 />
+
+                <select name={'course'} ref={register} className={'ContactForm__select'}>
+                    {courseOptions.map(value => (
+                        <option key={value.value} value={value.value}>
+                            {value.value}
+                        </option>
+                    ))}
+                </select>
+
                 {errors.phone && <span>{getErrorText(errors.phone.type)}</span>}
                 <textarea
                     name="massage"

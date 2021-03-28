@@ -8,6 +8,7 @@ import { ShortCourses } from '../pages/ShortCourses/ShortCourses';
 import { Contacts } from '../pages/Contacts/Contacts';
 import { News } from '../pages/News/News';
 import { LongCourses } from '../pages/LognCourses/LognCourses';
+import { Supervision } from '../pages/Supervision/Supervision';
 
 const BaseEducation = () => {
     let { path } = useRouteMatch();
@@ -22,6 +23,9 @@ const BaseEducation = () => {
             </Route>
             <Route path={`${path}/long_course/:id`}>
                 <LongCourses />
+            </Route>
+            <Route path={`${path}/supervision`}>
+                <Supervision />
             </Route>
         </Switch>
     );
@@ -63,16 +67,6 @@ export const routes = [
         text: 'Наш подход',
         component: MainPage,
     },
-    /*{
-        path: '/short_course/:id',
-        text: 'Образование',
-        component: ShortCourses,
-    },
-    {
-        path: '/long_course/:id',
-        text: 'Образование',
-        component: LongCourses,
-    }, */
 ];
 
 export const RouteWithSubRoutes = route => {

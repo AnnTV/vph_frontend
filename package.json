@@ -28,7 +28,7 @@
     },
     "scripts": {
         "start": "react-scripts start",
-        "build": "react-scripts build",
+        "build": "npm run build --prod && rm -rf /var/www/psyschool.com.ru/html/ && mkdir /var/www/psyschool.com.ru/html && cd build/ && cp -r ./ /var/www/psyschool.com.ru/html/",
         "test": "react-scripts test",
         "eject": "react-scripts eject"
     },

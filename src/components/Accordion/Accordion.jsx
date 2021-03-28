@@ -42,7 +42,7 @@ export const Accordion = ({ ...props }) => {
                                     item.steps.map((step, idx) => (
                                         <div className={'Accordion__steps__step'}>
                                             <NavHashLink
-                                                path={`/education/long_course/${item.id}#step_${step.id}`}
+                                                path={`/education${step.path}`}
                                             >
                                                 {step.text}
                                             </NavHashLink>

@@ -48,7 +48,7 @@ export const NewsCard = ({ ...props }) => {
                 </div>
 
                 <div className={'NewsCard__cost-and-more'}>
-                    <span className={'NewsCard__text'}>{props.children.cost} РУБ</span>
+                    <span className={'NewsCard__text'}>{props.children.cost}</span>
                     <HashLink path={props.children.path} children={'Подробнее...'} />
                 </div>
             </div>

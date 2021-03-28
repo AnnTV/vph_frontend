@@ -241,9 +241,14 @@
         width: 100%;
     }
 
-    .Main_second-block__sliderr .slick-track {
+    .Main_accordion-block {
         width: 100%;
-        max-width: 100vw;
+        padding: 0;
+    }
+
+    .Main_accordion-block .Accordion {
+        width: 100%;
+        padding: 0;
     }
 
     .Main_second-block .slick-arrow {
