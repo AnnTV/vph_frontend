@@ -52,7 +52,7 @@ export const CourseForm = ({ ...props }) => {
                 reset();
                 NotificationManager.success('Ваше сообщение отправлено, скоро мы с вами свяжемся', 'Успех!');
 
-                if (
+                /* if (
                     courseOptions
                         .slice(9)
                         .map((item) => item.value)
@@ -65,7 +65,7 @@ export const CourseForm = ({ ...props }) => {
                         }&email=${data.email}&phone=${data.phone}`,
                     );
                     setPopupVisible(true);
-                }
+                } */
             })
             .catch((error) => {
                 console.log(error);
@@ -157,7 +157,6 @@ export const CourseForm = ({ ...props }) => {
             >
                 <div>
                     <p>Вы можете произвести оплату выбранного курса прямо сейчас или же дождаться нашего ответа!</p>
-
                     <ButtonLink path={payLink} children={'Перейти к оплате'} />
                 </div>
             </SkyLightStateless>
