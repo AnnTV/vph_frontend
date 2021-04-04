@@ -39,10 +39,16 @@
     }
 }
 
+@media (max-width: 1024px) {
+    .Education__short_courses_ul li {
+        height: 145px;
+        max-height: 145px;
+    }
+}
+
 @media (max-width: 767px) {
     .Education__short_courses_ul li {
         padding: 0;
-        height: 145px;
         flex-grow: 1;
         margin: 2px 0;
     }

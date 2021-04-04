@@ -1,0 +1,29 @@
+.Payment_block {
+    padding: 32px calc(5% + 30px);
+    width: calc(100% - 2 * calc(5% + 30px));
+    max-width: calc(100% - 2 * calc(5% + 30px));
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Payment_block__form {
+    width: 80%;
+    max-width: 600px;
+}
+
+@media (max-width: 767px) {
+
+    .Payment_block {
+        padding: 32px 0;
+        width: 100%;
+        max-width: 100% ;
+    }
+
+    .Payment_block__form {
+        padding: 0 16px;
+        width: calc(100% - 32px);
+        max-width: 600px;
+    }
+}

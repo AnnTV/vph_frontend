@@ -1,17 +1,22 @@
-import React from 'react';
-import { useForm } from "react-hook-form";
+import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-
-import * as yup from "yup";
+import { SkyLightStateless } from 'react-skylight';
+import * as yup from 'yup';
 import 'yup-phone';
 
 import { contactFormErrors } from '../../utils/utilData';
 import './CourseForm.css';
 import axios from 'axios';
 import { NotificationManager } from 'react-notifications';
-import { courseOptions } from '../../utils/infoData';
+import { courseOptions, payFormOptions } from '../../utils/infoData';
+import { ButtonLink } from '../Button/Button';
 
 export const CourseForm = ({ ...props }) => {
+    const [popupVisible, setPopupVisible] = useState(false);
+    const [payLink, setPayLink] = useState('');
+    const [userName, setUserName] = useState('');
+
     const schema = yup.object().shape({
         firstName: yup.string().required(),
         secondName: yup.string().required(),
@@ -21,15 +26,16 @@ export const CourseForm = ({ ...props }) => {
     });
 
     const { register, handleSubmit, errors, reset } = useForm({
-        resolver: yupResolver(schema)
+        resolver: yupResolver(schema),
     });
 
-    const submitHandler = data => {
+    const submitHandler = (data) => {
         console.log(data);
-        console.log(data.course)
+        console.log(data.course);
 
-        // eslint-disable-next-line max-len
-        const appLink = "https://script.google.com/macros/s/AKfycbxP87HSco4soeNN3o5cZNKkUI_k8XFZpZIVcs3v_3In9lN9qAiqoTt-_g2AvmL2c-Uo/exec";
+        const appLink =
+            'https://script.google.com/macros/s/AKfycbxP87HSco4soeNN3o5cZNKkUI_' +
+            'k8XFZpZIVcs3v_3In9lN9qAiqoTt-_g2AvmL2c-Uo/exec';
 
         let formData = new FormData();
         formData.append('имя', data.firstName);
@@ -39,18 +45,37 @@ export const CourseForm = ({ ...props }) => {
         formData.append('сообщение', data.massage);
         formData.append('курс', data.course);
 
-        axios.post(appLink, formData)
-            .then(response => {
+        axios
+            .post(appLink, formData)
+            .then((response) => {
                 console.log(response);
                 reset();
                 NotificationManager.success('Ваше сообщение отправлено, скоро мы с вами свяжемся', 'Успех!');
+
+                if (
+                    courseOptions
+                        .slice(9)
+                        .map((item) => item.value)
+                        .includes(data.course)
+                ) {
+                    setUserName(data.firstName);
+                    setPayLink(
+                        `/pay/${getCourseId(data.course)}?firstName=${data.firstName}&secondName=${
+                            data.secondName
+                        }&email=${data.email}&phone=${data.phone}`,
+                    );
+                    setPopupVisible(true);
+                }
             })
-            .catch(error => {
+            .catch((error) => {
                 console.log(error);
-                // eslint-disable-next-line max-len
-                NotificationManager.error('Призошла ошибка, попробуйте позже или свяжитесь с нами по телефон: +7 995 895 21 67', 'Ошибка!', 5000);
-            })
-    }
+                NotificationManager.error(
+                    'Призошла ошибка, попробуйте позже или свяжитесь с нами по телефон: +7 995 895 21 67',
+                    'Ошибка!',
+                    5000,
+                );
+            });
+    };
 
     const getErrorText = (errorType) => {
         switch (errorType) {
@@ -63,7 +88,16 @@ export const CourseForm = ({ ...props }) => {
             case 'phone':
                 return contactFormErrors.notCorrect;
         }
-    }
+    };
+
+    const getCourseId = (title) => {
+        for (let i = 0; i < payFormOptions.length; ++i) {
+            if (payFormOptions[i].title === title) {
+                return i;
+            }
+        }
+        return 0;
+    };
 
     return (
         <>
@@ -97,13 +131,12 @@ export const CourseForm = ({ ...props }) => {
                 />
 
                 <select name={'course'} ref={register} className={'ContactForm__select'}>
-                    {courseOptions.map(value => (
-                        <option key={value.value} value={value.value}>
+                    {courseOptions.map((value) => (
+                        <option key={value.value} value={value.value} selected={props.course === value.value}>
                             {value.value}
                         </option>
                     ))}
                 </select>
-
                 {errors.phone && <span>{getErrorText(errors.phone.type)}</span>}
                 <textarea
                     name="massage"
@@ -112,8 +145,22 @@ export const CourseForm = ({ ...props }) => {
                     className={errors.massage ? 'Input-error' : ''}
                 />
                 {errors.massage && <span>{getErrorText(errors.massage.type)}</span>}
-                <input value={'Записаться'} type="submit" className={'Form-btn'}/>
+                <input value={'Записаться'} type="submit" className={'Form-btn'} />
             </form>
+            <SkyLightStateless
+                isVisible={popupVisible}
+                onCloseClicked={() => {
+                    window.location.href = '/main';
+                    setPopupVisible(false);
+                }}
+                title={`${userName}, ваша запись прошла успешно!`}
+            >
+                <div>
+                    <p>Вы можете произвести оплату выбранного курса прямо сейчас или же дождаться нашего ответа!</p>
+
+                    <ButtonLink path={payLink} children={'Перейти к оплате'} />
+                </div>
+            </SkyLightStateless>
         </>
     );
 };

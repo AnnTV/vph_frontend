@@ -19,53 +19,38 @@ import { labelTexts, sloganText, urlsLinks, cardsData, accordionData } from '../
 export const MainPage = () => {
     return (
         <div className={'Page Main'}>
-            <BlockTitle
-                children={'Высшая психологическая школа'}
-                className={'Page__block'}
-            />
+            <BlockTitle children={'Высшая психологическая школа'} className={'Page__block'} />
             <article className={'Page__block Main_first-block'}>
                 <div className={'Main_first-block__text-info'}>
                     <section className={'Main_first-block__label'}>
-                        {
-                            labelTexts.map((item, idx) => (
-                                <span key={idx}>{item}</span>
-                            ))
-                        }
+                        {labelTexts.map((item, idx) => (
+                            <span key={idx}>{item}</span>
+                        ))}
                     </section>
-                    <section className={'Main_first-block__slogan'}>
-                        {sloganText}
-                    </section>
+                    <section className={'Main_first-block__slogan'}>{sloganText}</section>
                 </div>
                 <section className={'Main_first-block__urls'}>
                     <ul>
-                        {
-                            urlsLinks.map((item, idx) => (
-                                <li key={idx}>
-                                    <NavHashLink path={item.path}>{item.children}</NavHashLink>
-                                </li>
-                            ))
-                        }
+                        {urlsLinks.map((item, idx) => (
+                            <li key={idx}>
+                                <NavHashLink path={item.path}>{item.children}</NavHashLink>
+                            </li>
+                        ))}
                     </ul>
                 </section>
             </article>
 
             <article className={'Page__block Main_second-block'}>
                 <Slider {...caruselSettings} className={'Main_second-block__slider'}>
-                    {
-                        cardsData.map((item, idx) => (
-                            <Card
-                                title={item.title}
-                                text={item.text}
-                                ket={idx}
-                            />
-                        ))
-                    }
+                    {cardsData.map((item, idx) => (
+                        <Card title={item.title} text={item.text} key={idx} />
+                    ))}
                 </Slider>
             </article>
 
             <BlockLink children={'Более подробно о нашем подходе'} path={'/about'} className={'Page__block'} />
 
-            <BlockTitle children={'Направления обучения'} className={'Page__block'}/>
+            <BlockTitle children={'Направления обучения'} className={'Page__block'} />
 
             <article className={'Page__block Main_accordion-block'}>
                 <Accordion items={accordionData} />
@@ -73,25 +58,26 @@ export const MainPage = () => {
 
             <BlockLink children={'Подробнее о направлении и обучении'} path={'/education'} className={'Page__block'} />
 
-            <BlockTitle children={'Оставайтесь на связи'} className={'Page__block'}/>
+            <BlockTitle children={'Оставайтесь на связи'} className={'Page__block'} />
 
-            <article className={'Page__block Main_contact-block'} >
+            <article className={'Page__block Main_contact-block'}>
                 <section className={'Main_contact-block__text'}>
                     <p>
-                        Мы собрали команду единомышленников и работаем как одна методическая группа для разработки программ.
+                        Мы собрали команду единомышленников и работаем как одна методическая группа для разработки
+                        программ.
                     </p>
                     <p>
-                        Если вы разделяете наши ценности, приглашаем к сотрудничеству на постоянной или проектной основе, напишите нам.
+                        Если вы разделяете наши ценности, приглашаем к сотрудничеству на постоянной или проектной
+                        основе, напишите нам.
                     </p>
                 </section>
 
                 <section className={'Main_contact-block__form'}>
                     <ContactForm />
                 </section>
-
             </article>
 
-            <Devider className={'Page__devider'}/>
+            <Devider className={'Page__devider'} />
         </div>
     );
 };

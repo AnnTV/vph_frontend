@@ -12,7 +12,7 @@ import ScrollToTop from './utils/ScrollToTop';
 import 'react-notifications/dist/react-notifications.css';
 
 class App extends Component {
-    state = { users: [] };
+    /*state = { users: [] };
 
     componentDidMount() {
         apiUsers.getAll().then((res) => {
@@ -25,7 +25,7 @@ class App extends Component {
             // Parse task information
             return user;
         });
-    };
+    }; */
 
     render() {
         return (
@@ -40,7 +40,7 @@ class App extends Component {
                     </Switch>
                 </ScrollToTop>
                 <Footer />
-                <NotificationContainer/>
+                <NotificationContainer />
             </Router>
         );
     }

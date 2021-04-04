@@ -24,35 +24,22 @@ export const Accordion = ({ ...props }) => {
             {props.items.map((item, idx) => (
                 <AccordionItem key={idx} uuid={`uuid_${idx}`}>
                     <AccordionItemHeading>
-                        <AccordionItemButton>
-                            {item.heading}
-                        </AccordionItemButton>
+                        <AccordionItemButton>{item.heading}</AccordionItemButton>
                     </AccordionItemHeading>
                     <AccordionItemPanel>
                         <div className={'Accordion__panel'}>
                             <div className={'Accordion__text'}>
-                                {
-                                    item.content.map((item, idx) => (
-                                      <p key={idx}>{item}</p>
-                                    ))
-                                }
+                                {item.content.map((item, idx) => (
+                                    <p key={idx}>{item}</p>
+                                ))}
                             </div>
                             <div className={'Accordion__steps'}>
-                                {
-                                    item.steps.map((step, idx) => (
-                                        <div className={'Accordion__steps__step'}>
-                                            <NavHashLink
-                                                path={`/education${step.path}`}
-                                            >
-                                                {step.text}
-                                            </NavHashLink>
-                                            {idx !== (item.steps.length - 1) &&
-                                                <ArrowDownIcon width={24} height={24} />
-                                            }
-                                        </div>
-
-                                    ))
-                                }
+                                {item.steps.map((step, idx) => (
+                                    <div className={'Accordion__steps__step'} key={idx}>
+                                        <NavHashLink path={`/education${step.path}`}>{step.text}</NavHashLink>
+                                        {idx !== item.steps.length - 1 && <ArrowDownIcon width={24} height={24} />}
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </AccordionItemPanel>

@@ -9,24 +9,24 @@ import { DiplomaIcon } from '../Icon/DiplomaIcon';
 export const NewsCard = ({ ...props }) => {
     return (
         <div className={'NewsCard ' + props.className}>
-            <span className={'NewsCard__type'}>{props.children.type}</span>
+            <span className={'NewsCard__type'}>{props.children[0]}</span>
             <div>
                 <div className={'NewsCard__main-info'}>
-                    <span className={'NewsCard__title'}>{props.children.title}</span>
+                    <span className={'NewsCard__title'}>{props.children[1]}</span>
                     <div className={'NewsCard__main-info-details'}>
                         <div>
-                            <CalendarIcon  width={24} height={24}/>
+                            <CalendarIcon width={24} height={24} />
                             <strong>Начало занятий:</strong>
                         </div>
 
-                        <span className={'NewsCard__text'}>{props.children.start}</span>
+                        <span className={'NewsCard__text'}>{props.children[2]}</span>
                     </div>
                     <div className={'NewsCard__main-info-details'}>
                         <div>
-                            <TimeIcon  width={24} height={24}/>
+                            <TimeIcon width={24} height={24} />
                             <strong>Продолжительность:</strong>
                         </div>
-                        <span className={'NewsCard__text'}>{props.children.duration}</span>
+                        <span className={'NewsCard__text'}>{props.children[3]}</span>
                     </div>
                     <div className={'NewsCard__main-info-details'}>
                         <div>
@@ -34,22 +34,20 @@ export const NewsCard = ({ ...props }) => {
                             <strong>Ведущий:</strong>
                         </div>
 
-                        <span className={'NewsCard__text'}>
-                             {props.children.author}
-                        </span>
+                        <span className={'NewsCard__text'}>{props.children[4]}</span>
                     </div>
                     <div className={'NewsCard__main-info-details'}>
                         <div>
                             <DiplomaIcon width={24} height={24} />
                             <strong>Документ:</strong>
                         </div>
-                        <span className={'NewsCard__text'}>{props.children.document}</span>
+                        <span className={'NewsCard__text'}>{props.children[5]}</span>
                     </div>
                 </div>
 
                 <div className={'NewsCard__cost-and-more'}>
-                    <span className={'NewsCard__text'}>{props.children.cost}</span>
-                    <HashLink path={props.children.path} children={'Подробнее...'} />
+                    <span className={'NewsCard__text'}>{props.children[6]}</span>
+                    <HashLink path={props.children[7]} children={'Подробнее...'} />
                 </div>
             </div>
         </div>

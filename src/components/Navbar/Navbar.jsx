@@ -15,26 +15,33 @@ const MenuContext = React.createContext();
 
 // create the provider
 const MenuProvider = (props) => {
-    const [menuOpenState, setMenuOpenState] = useState(false)
+    const [menuOpenState, setMenuOpenState] = useState(false);
 
     return (
-        <MenuContext.Provider value={{
-            isMenuOpen: menuOpenState,
-            toggleMenu: () => setMenuOpenState(!menuOpenState),
-            stateChangeHandler: (newState) => setMenuOpenState(newState.isOpen)
-        }}>
+        <MenuContext.Provider
+            value={{
+                isMenuOpen: menuOpenState,
+                toggleMenu: () => setMenuOpenState(!menuOpenState),
+                stateChangeHandler: (newState) => setMenuOpenState(newState.isOpen),
+            }}
+        >
             {props.children}
         </MenuContext.Provider>
-    )
-}
+    );
+};
 
 export const Navbar = ({ ...props }) => {
-
     return (
         <>
             <nav className={'Navbar ' + props.className}>
                 {routes.slice(0, 4).map((item, idx) => (
-                    <NavLink path={item.path} children={item.text} className={'Navbar_link'} activeClassName="active" />
+                    <NavLink
+                        key={idx}
+                        path={item.path}
+                        children={item.text}
+                        className={'Navbar_link'}
+                        activeClassName="active"
+                    />
                 ))}
             </nav>
             <MenuProvider>
@@ -45,8 +52,7 @@ export const Navbar = ({ ...props }) => {
 };
 
 export const BurgerMenu = () => {
-
-    const ctx = useContext(MenuContext)
+    const ctx = useContext(MenuContext);
     return (
         <Menu
             width={280}
@@ -65,6 +71,7 @@ export const BurgerMenu = () => {
                     className={'BurgerMenu_link'}
                     activeClassName="active"
                     onClick={ctx.toggleMenu}
+                    key={idx}
                 />
             ))}
             <div className={'BurgerMenu_icons'}>
@@ -74,4 +81,4 @@ export const BurgerMenu = () => {
             </div>
         </Menu>
     );
-}
+};

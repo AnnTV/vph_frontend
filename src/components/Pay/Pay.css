@@ -1,9 +1,9 @@
-.CourseForm {
+.Pay {
     display: flex;
     flex-direction: column;
 }
 
-.CourseForm input {
+.Pay .input {
     margin-top: 8px;
     height: 32px;
     padding: 0.5em 1em;
@@ -15,31 +15,30 @@
     border: 1px solid rgba(68, 68, 68, 0.7);
 }
 
-.ContactForm__select {
+.Pay .readonly {
     margin-top: 8px;
-    height: 48px;
-    padding: 0.5em 12px;
+    height: 32px;
+    padding: 0.5em 1em;
 
     font-size: 16px;
     line-height: 18px;
     letter-spacing: 0.15em;
 
-    border: 1px solid rgba(68, 68, 68, 0.7);
+    border: 1px solid rgba(68, 68, 68, 0.3);
 }
 
-.ContactForm__select:focus,
-.ContactForm__select:hover{
-    outline: none;
-    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
-    border-color:  rgba(68, 68, 68, 0.7);
-}
 
-.CourseForm input:focus {
+.Pay .input:focus {
     filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
     outline: none;
 }
 
-.CourseForm textarea {
+.Pay .readonly:focus {
+    filter: none !important;
+    outline: none;
+}
+
+.Pay textarea {
     margin-top: 8px;
     height: 64px;
     padding: 0.5em 1em;
@@ -51,12 +50,12 @@
     resize: none;
 }
 
-.CourseForm textarea:focus {
+.Pay textarea:focus {
     filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
     outline: none;
 }
 
-.CourseForm .Input-error {
+.Pay .Input-error {
     border: 1px solid var(--error);
     filter: drop-shadow(2px 2px 4px rgba(255, 0, 0, 0.25));
 }
@@ -69,7 +68,7 @@
     margin: 8px 0;
 }
 
-.CourseForm .Form-btn {
+.Pay .Form-btn {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -101,47 +100,29 @@
     padding: 0;
 }
 
-.CourseForm .Form-btn:hover {
+.Pay .Form-btn:hover {
     filter: opacity(1);
     color: var(--dark-1);
 }
 
-.CourseForm .Form-btn:active {
+.Pay .Form-btn:active {
     filter: opacity(0.8);
     color: var(--primary-1);
 }
 
-.skylight-dialog {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: max-content;
-    min-height: max-content !important;
-    padding: 32px!important;
+.Pay .Info {
+    margin: 16px 0;
 }
 
-.skylight-dialog div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.Pay .Info > div {
+    margin-bottom: 8px;
 }
 
-.skylight-dialog div p {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
+.Pay .Info .Label {
+    font-weight: 600;
 }
 
-@media (max-width: 767px) {
-    .skylight-dialog {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        height: max-content;
-        min-height: max-content !important;
-        padding: 32px!important;
-        width: calc(100vw - 80px)!important;
-        left: 8px!important;
-        margin-left: 0 !important;
-    }
+.Pay .Info .Desc {
+    margin-top: 8px;
 }

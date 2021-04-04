@@ -9,6 +9,7 @@ import { Contacts } from '../pages/Contacts/Contacts';
 import { News } from '../pages/News/News';
 import { LongCourses } from '../pages/LognCourses/LognCourses';
 import { Supervision } from '../pages/Supervision/Supervision';
+import { Payment } from '../pages/Payment/Payment';
 
 const BaseEducation = () => {
     let { path } = useRouteMatch();
@@ -29,7 +30,7 @@ const BaseEducation = () => {
             </Route>
         </Switch>
     );
-}
+};
 
 export const routes = [
     {
@@ -67,16 +68,21 @@ export const routes = [
         text: 'Наш подход',
         component: MainPage,
     },
+    {
+        path: '/pay/:id',
+        text: 'Оплата',
+        component: Payment,
+    },
 ];
 
-export const RouteWithSubRoutes = route => {
+export const RouteWithSubRoutes = (route) => {
     return (
         <Route
             path={route.path}
-            render={props => (
+            render={(props) => (
                 // pass the sub-routes down to keep nesting
                 <route.component {...props} routes={route.routes} />
             )}
         />
     );
-}
+};

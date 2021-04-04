@@ -61,6 +61,14 @@
   background-size: cover;
 }
 
+.Page__loader {
+  padding: 64px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 128px - 73px - 129px - 96px - 9px - 128px - 4px);
+}
+
 @media (max-width: 767px) {
   .Page__block {
     overflow-x: hidden;
