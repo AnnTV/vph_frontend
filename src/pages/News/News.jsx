@@ -39,8 +39,8 @@ export const News = () => {
             ) : (
                 <div className={'Page__block News_courses'}>
                     <ul className={'News_courses_ul'}>
-                        {newsCards.map((item) => (
-                            <li key={item.id}>
+                        {newsCards.map((item, idx) => (
+                            <li key={idx}>
                                 <NewsCard children={item} />
                             </li>
                         ))}
