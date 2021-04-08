@@ -30,7 +30,7 @@ export const Pay = ({ ...props }) => {
 
     const genTinkoffData = (data) => {
         return {
-            TerminalKey: '1617024976590DEMO',
+            TerminalKey: '1617024976590',
             Amount: props.amount * 100,
             OrderId: `${(Math.random() * 100000000000).toFixed(0)}`,
             Description: props.desc,
