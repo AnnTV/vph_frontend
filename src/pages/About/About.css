@@ -2,13 +2,26 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    text-decoration: underline;
     padding: 32px calc(5% + 30px);
+    padding-bottom: 0px;
 
     font-weight: 500;
     font-size: 32px;
     line-height: 36px;
     letter-spacing: 3px;
+    color: var(--primary-1);
+    max-width: calc(100% - 2 * calc(5% + 30px));
+}
+.About__main-descr {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px calc(5% + 30px);
+
+    font-weight: 500;
+    /*font-size: 32px;*/
+    /*line-height: 36px;*/
+    /*letter-spacing: 3px;*/
     color: var(--primary-1);
     max-width: calc(100% - 2 * calc(5% + 30px));
 }
