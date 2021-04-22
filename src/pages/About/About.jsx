@@ -48,6 +48,11 @@ export const AboutPage = () => {
                 </div>
             </div>
 
+            <div className={'Page__block About__main-slogan'}>
+                Обучение психологов практике консультирования
+            </div>
+
+
             <BlockTitle children={'В обучении мы используем три ключа:'} className={'Page__block'}/>
 
             <div className={'Page__block About_accordion-block'}>
@@ -133,14 +138,6 @@ export const AboutPage = () => {
                         </AccordionItemPanel>
                     </AccordionItem>
                 </SuperAccordion>
-            </div>
-
-            <div className={'Page__block About__main-slogan'}>
-                <p>Такой подход гарантирует, что вы «повзрослеете» в профессии: обогатитесь современными практиками и
-                    сможете консультировать с первого дня после обучения, получив диплом государственного образца.</p>
-                <p>Если вы интересуетесь психологией и хотите развиваться в профессиональном сообществе, овладеть
-                    современными эффективными подходами и оставаться экспертом на протяжении всей карьеры, приходите к
-                    нам, в Высшую психологическую школу.</p>
             </div>
 
             <BlockTitle children={'Команда Высшей психологической школы'} className={'Page__block'}/>
