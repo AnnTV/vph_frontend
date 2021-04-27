@@ -349,7 +349,7 @@ const LongCourse = ({ ...props }) => {
 
                             <div
                                 className={'LongCourse__block-info__author-img'}
-                                style={{ backgroundImage: `url("../../images/team/hal_vita.jpg")` }}
+                                style={{ backgroundImage: `url("../../images/team/hol_vita2.jpg")` }}
                             />
                             <span className={'LongCourse__block-info__name'}>Вита Холмогорова</span>
                             <Devider width={240} />
@@ -363,7 +363,7 @@ const LongCourse = ({ ...props }) => {
 
                             <div
                                 className={'LongCourse__block-info__author-img'}
-                                style={{ backgroundImage: `url("../../images/team/kol_ev.jpg")` }}
+                                style={{ backgroundImage: `url("../../images/team/kol_ev2.jpg")` }}
                             />
                             <span className={'LongCourse__block-info__name'}>Евгения Кольцова</span>
                             <Devider width={240} />
