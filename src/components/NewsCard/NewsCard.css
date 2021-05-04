@@ -2,7 +2,7 @@
     --type-color: rgba(166, 186, 135, 0.4);
 
     border: 1px solid var(--dark-1);
-    margin: 0 16px;
+    margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;

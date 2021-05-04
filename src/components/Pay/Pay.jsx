@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
@@ -15,7 +15,12 @@ export const Pay = ({ ...props }) => {
     const { search } = useLocation();
     const query = queryString.parse(search);
 
-    console.log(query);
+    // const [firstName, setFirstName] = useState ( query.firstName );
+    // const [secondName, setSecondName] = useState ( query.secondName );
+    // const [firstName, setFirstName] = useState ( query.firstName );
+    // const [firstName, setFirstName] = useState ( query.firstName );
+
+    // console.log(query);
 
     const schema = yup.object().shape({
         firstName: yup.string().required(),

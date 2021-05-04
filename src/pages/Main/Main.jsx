@@ -14,19 +14,25 @@ import { BlockLink } from '../../components/BlockLink/BlockLink';
 import { Devider } from '../../components/Devider/Devider';
 import { ContactForm } from '../../components/ContactForm/ContactForm';
 import { caruselSettings } from '../../utils/utilData';
-import { labelTexts, sloganText, urlsLinks, cardsData, accordionData } from '../../utils/infoData';
+import { accordionData, cardsData, labelTexts, sloganText, urlsLinks } from '../../utils/infoData';
 
 export const MainPage = () => {
     return (
         <div className={'Page Main'}>
-            <BlockTitle children={'Высшая психологическая школа'} className={'Page__block'} />
+            <BlockTitle children={'Высшая психологическая школа'} className={'Page__block'}/>
             <article className={'Page__block Main_first-block'}>
                 <div className={'Main_first-block__text-info'}>
+                    <section className={'Main_first-block__prefix'}>
+                        <span>Зачем учиться у нас?</span>
+                        <Devider width={240} other={{ 'margin': '0 auto', 'paddingTop': '16px' }}/>
+                    </section>
+
                     <section className={'Main_first-block__label'}>
                         {labelTexts.map((item, idx) => (
                             <span key={idx}>{item}</span>
                         ))}
                     </section>
+
                     <section className={'Main_first-block__slogan'}>{sloganText}</section>
                 </div>
                 <section className={'Main_first-block__urls'}>
@@ -43,22 +49,22 @@ export const MainPage = () => {
             <article className={'Page__block Main_second-block'}>
                 <Slider {...caruselSettings} className={'Main_second-block__slider'}>
                     {cardsData.map((item, idx) => (
-                        <Card title={item.title} text={item.text} key={idx} />
+                        <Card title={item.title} text={item.text} key={idx}/>
                     ))}
                 </Slider>
             </article>
 
-            <BlockLink children={'Более подробно о нашем подходе'} path={'/about'} className={'Page__block'} />
+            <BlockLink children={'Более подробно о нашем подходе'} path={'/about'} className={'Page__block'}/>
 
-            <BlockTitle children={'Направления обучения'} className={'Page__block'} />
+            <BlockTitle children={'Направления обучения'} className={'Page__block'}/>
 
             <article className={'Page__block Main_accordion-block'}>
-                <Accordion items={accordionData} />
+                <Accordion items={accordionData}/>
             </article>
 
-            <BlockLink children={'Подробнее о направлении и обучении'} path={'/education'} className={'Page__block'} />
+            <BlockLink children={'Подробнее о направлении и обучении'} path={'/education'} className={'Page__block'}/>
 
-            <BlockTitle children={'Оставайтесь на связи'} className={'Page__block'} />
+            <BlockTitle children={'Оставайтесь на связи'} className={'Page__block'}/>
 
             <article className={'Page__block Main_contact-block'}>
                 <section className={'Main_contact-block__text'}>
@@ -73,11 +79,11 @@ export const MainPage = () => {
                 </section>
 
                 <section className={'Main_contact-block__form'}>
-                    <ContactForm />
+                    <ContactForm/>
                 </section>
             </article>
 
-            <Devider className={'Page__devider'} />
+            <Devider className={'Page__devider'}/>
         </div>
     );
 };

@@ -5,6 +5,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 190px;
 }
 
 .Card__title {
@@ -24,11 +25,37 @@
     letter-spacing: 1.5px;
 }
 
+@media (max-width: 1440px) {
+    .Card {
+        height: 267px;
+    }
+}
+
+@media (max-width: 1170px) {
+    .Card {
+        height: 270px;
+    }
+}
+@media (max-width: 1026px) {
+    .Card {
+        height: 290px;
+    }
+}
+@media (max-width: 1022px) {
+    .Card {
+        height: 210px;
+    }
+}
+@media (max-width: 1022px) {
+    .Card {
+        height: 260px;
+    }
+}
 @media (max-width: 767px) {
     .Card {
         padding: 8px;
         margin: 0 8px;
         border: none;
+        height: auto;
     }
-    
 }

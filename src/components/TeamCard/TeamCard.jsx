@@ -8,7 +8,7 @@ export const TeamCard = ({ ...props }) => {
             <div className={'TeamCard__avatar'} style={{backgroundImage: `url("../../images/team/${props.avatar}")`}} />
             <div className={'TeamCard__body'}>
                 <span className={'TeamCard__name'}>{props.name}</span>
-                <Devider width={240} />
+                <Devider width={340} style={{margin: '0 auto', padding: '15px 0 0 0'}}/>
                 <div className={'TeamCard__info'}>
                     {
                         props.about.map((item, idx) => (
