@@ -10,6 +10,7 @@ import { News } from '../pages/News/News';
 import { LongCourses } from '../pages/LognCourses/LognCourses';
 import { Supervision } from '../pages/Supervision/Supervision';
 import { Payment } from '../pages/Payment/Payment';
+import { NonSpec } from '../pages/NonSpec/NonSpec';
 
 const BaseEducation = () => {
     let { path } = useRouteMatch();
@@ -42,6 +43,11 @@ export const routes = [
         path: '/education',
         text: 'Образование',
         component: BaseEducation,
+    },
+    {
+        path: '/non-spec',
+        text: 'Для неспециалистов',
+        component: NonSpec,
     },
     {
         path: '/about',

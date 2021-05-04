@@ -130,9 +130,9 @@ export const CourseForm = ({ ...props }) => {
                     className={errors.phone ? 'Input-error' : ''}
                 />
 
-                <select name={'course'} ref={register} className={'ContactForm__select'}>
+                <select name={'course'} ref={register} className={'ContactForm__select'} defaultValue={props.course}>
                     {courseOptions.map((value) => (
-                        <option key={value.value} value={value.value} selected={props.course === value.value}>
+                        <option key={value.value} value={value.value}>
                             {value.value}
                         </option>
                     ))}

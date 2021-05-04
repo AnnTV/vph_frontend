@@ -3,13 +3,14 @@ import React from 'react';
 import { Devider } from '../../components/Devider/Devider';
 import './LognCourses.css';
 import { useParams } from 'react-router';
+import { useLocation } from 'react-router-dom';
 import { BlockTitle } from '../../components/BlockTitle/BlockTitle';
 import { CourseForm } from '../../components/CourseForm/CourseForm';
 import { DiplomaIcon } from '../../components/Icon/DiplomaIcon';
 import { MoneyIcon } from '../../components/Icon/MoneyIcon';
 import { CalendarIcon } from '../../components/Icon/CalendarIcon';
 import { TimeIcon } from '../../components/Icon/TimeIcon';
-import { NavHashLink } from '../../components/Link/Link';
+import { ALink, NavHashLink } from '../../components/Link/Link';
 import { AttentionIcon } from '../../components/Icon/AttentionIcon';
 import { AuthorIcon } from '../../components/Icon/AuthorIcon';
 import { StudyIcon } from '../../components/Icon/StudyIcon';
@@ -17,33 +18,38 @@ import { courseOptions } from '../../utils/infoData';
 
 export const LongCourses = () => {
     let { id } = useParams();
+    const { pathname, hash } = useLocation();
 
     const getCourse = (id) => {
-        return courseOptions.slice(0, 9)[id].value;
+        const currCourse = courseOptions.find(opt => {
+            return `${pathname}${hash}`.indexOf(opt.path) >= 0;
+        });
+        return currCourse ? currCourse.value : null;
+        // return courseOptions.slice(0, 9)[id].value;
     };
 
     return (
         <div className={'Page'}>
-            <LongCourse id={id} />
+            <LongCourse id={id}/>
 
-            <BlockTitle id={'form'} children={'Записаться на курс'} className={'Page__block'} />
+            <BlockTitle id={'form'} children={'Записаться на курс'} className={'Page__block'}/>
             <article className={'Page__block Course_contact-block'}>
                 <section className={'Course_contact-block__form'}>
-                    <CourseForm course={getCourse(id)} />
+                    <CourseForm course={getCourse(id)}/>
                 </section>
             </article>
-            <Devider className={'Page__devider'} />
+            <Devider className={'Page__devider'}/>
         </div>
     );
 };
 
 const LongCourse = ({ ...props }) => {
-    console.log(props.id);
+    // console.log(props.id);
     switch (props.id) {
         case '0':
             return (
                 <>
-                    <BlockTitle children={'Гештальт-терапия'} className={'Page__block'} />
+                    <BlockTitle children={'Гештальт-терапия'} className={'Page__block'}/>
 
                     <div className={'Page__block LongCourse__block-info'}>
                         <div className={'LongCourse__block-info__course'}>
@@ -54,7 +60,7 @@ const LongCourse = ({ ...props }) => {
                                 Метод гештальт-терапии одним из первых успешно зарекомендовал себя в России. Его
                                 применение универсально: для индивидуальной, групповой, супружеской и парной
                                 психотерапии, в образовательных учреждениях и бизнес-организациях.
-                                <br />
+                                <br/>
                                 Обучение на программе включает базовую теорию и методы гештальт-терапии, навыки
                                 гештальт-диагностики, принципы работы в обучающих и терапевтических группах.
                             </p>
@@ -90,27 +96,27 @@ const LongCourse = ({ ...props }) => {
 
                             <div className={'LongCourse__block-info__summary'}>
                                 <div className={'Page__block__text__info'}>
-                                    <TimeIcon width={24} height={24} />
+                                    <TimeIcon width={24} height={24}/>
                                     <strong>100</strong>
                                     <span>часов практики в очном формате</span>
                                 </div>
                                 <div className={'Page__block__text__info'}>
-                                    <CalendarIcon width={24} height={24} />
+                                    <CalendarIcon width={24} height={24}/>
                                     <strong>9</strong>
                                     <span>двухдневных модулей, 8 часов/день</span>
                                 </div>
                                 <div className={'Page__block__text__info'}>
-                                    <MoneyIcon width={24} height={24} />
+                                    <MoneyIcon width={24} height={24}/>
                                     <strong>Стоимость:</strong>
                                     <span> 9 000 рублей за модуль</span>
                                 </div>
                                 <div className={'Page__block__text__info'}>
-                                    <DiplomaIcon width={24} height={24} />
+                                    <DiplomaIcon width={24} height={24}/>
                                     <strong>Сертификат:</strong>
                                     <span>гештальт-терапии 1-ой ступени</span>
                                 </div>
                                 <div className={'Page__block__text__info'}>
-                                    <AttentionIcon width={24} height={24} />
+                                    <AttentionIcon width={24} height={24}/>
                                     <strong>Открыт набор группы:</strong>
                                     <NavHashLink
                                         path={`/education/long_course/${props.id}#form`}
@@ -119,7 +125,7 @@ const LongCourse = ({ ...props }) => {
                                 </div>
                             </div>
 
-                            <Devider width={240} />
+                            <Devider width={240}/>
 
                             <span className={'LongCourse__block-info__title'} id={'step_1'}>
                                 Практический курс гештальт-терапии 2 ступени
@@ -128,7 +134,7 @@ const LongCourse = ({ ...props }) => {
                                 Курс направлен на практическое освоение принципов и техник гештальт-терапии, разбор
                                 кейсов, понимание вариативности клиентского запроса и боли. Слушатели приобретают
                                 практический опыт, формируют свой терапевтический стиль.
-                                <br />
+                                <br/>
                                 Подробно разбирают запросы, связанные с травматизацией, психосоматикой, работой с семьей
                                 и пр. Супервизионные часы способствуют формированию устойчивых навыков психотерапевта.
                             </p>
@@ -172,27 +178,27 @@ const LongCourse = ({ ...props }) => {
 
                             <div className={'LongCourse__block-info__summary'}>
                                 <div className={'Page__block__text__info'}>
-                                    <TimeIcon width={24} height={24} />
+                                    <TimeIcon width={24} height={24}/>
                                     <strong>340</strong>
                                     <span>часов практики в очном формате</span>
                                 </div>
                                 <div className={'Page__block__text__info'}>
-                                    <CalendarIcon width={24} height={24} />
+                                    <CalendarIcon width={24} height={24}/>
                                     <strong>21</strong>
                                     <span>двухдневных модулей, 8 часов/день</span>
                                 </div>
                                 <div className={'Page__block__text__info'}>
-                                    <MoneyIcon width={24} height={24} />
+                                    <MoneyIcon width={24} height={24}/>
                                     <strong>Стоимость:</strong>
                                     <span>10 000 рублей за модуль</span>
                                 </div>
                                 <div className={'Page__block__text__info'}>
-                                    <DiplomaIcon width={24} height={24} />
+                                    <DiplomaIcon width={24} height={24}/>
                                     <strong>Сертификат:</strong>
                                     <span>гештальт-терапии 2-ой ступени и диплом о переподготовке</span>
                                 </div>
                                 <div className={'Page__block__text__info'}>
-                                    <AttentionIcon width={24} height={24} />
+                                    <AttentionIcon width={24} height={24}/>
                                     <strong>Открыт набор группы:</strong>
                                     <NavHashLink
                                         path={`/education/long_course/${props.id}#form`}
@@ -213,7 +219,7 @@ const LongCourse = ({ ...props }) => {
                                 style={{ backgroundImage: `url("../../images/team/irina_isaeva.jpg")` }}
                             />
                             <span className={'LongCourse__block-info__name'}>Ирина Исаева</span>
-                            <Devider width={240} />
+                            <Devider width={240}/>
 
                             <p>
                                 Гештальт-терапевт, обучающий тренер по гештальт-терапии 1-ой и 2-ой ступени, супервизор,
@@ -232,7 +238,7 @@ const LongCourse = ({ ...props }) => {
         case '1':
             return (
                 <>
-                    <BlockTitle children={'Экзистенциальный анализ'} className={'Page__block'} />
+                    <BlockTitle children={'Экзистенциальный анализ'} className={'Page__block'}/>
 
                     <div className={'Page__block LongCourse__block-info'}>
                         <div className={'LongCourse__block-info__course'}>
@@ -244,13 +250,13 @@ const LongCourse = ({ ...props }) => {
                             </p>
                             <p>
                                 Международное общество экзистенциального анализа и логотерапии (GLE-International) ведет
-                                деятельность в странах ЕС, Швейцарии, Израиле, Великобритании, России, Аргентине и
-                                Канаде в области психологии, психотерапии, медицины, педагогики, психологии образования,
+                                деятельность в странах ЕС, Швейцарии, Великобритании, России, Аргентине и Канаде
+                                в области психологии, психотерапии, медицины, педагогики, психологии образования,
                                 менеджмента, переговоров и медиации.
                             </p>
 
-                            <br id={'step_0'} />
-                            <br id={'step_1'} />
+                            <br id={'step_0'}/>
+                            <br id={'step_1'}/>
                             <span className={'LongCourse__block-info__title'}>Базовый и клинический курс</span>
                             <p>
                                 Программа предназначена для людей с высшим психологическим образованием, студентов
@@ -262,6 +268,9 @@ const LongCourse = ({ ...props }) => {
                                 специальности "Психолог-консультант в экзистенциально-аналитическом направлении", а
                                 также международный сертификат GLE International (при выполнении всех требований).
                             </p>
+                            <div className={'LongCourse__block-info__gle_logo'}>
+                                <img src={'../../images/Logo-GLE-klein-2.jpg'} alt="GLE" className={''}/>
+                            </div>
 
                             <span className={'LongCourse__block-info__title'}>Знания и навыки:</span>
                             <ul>
@@ -292,32 +301,32 @@ const LongCourse = ({ ...props }) => {
 
                             <div className={'LongCourse__block-info__summary'}>
                                 <div className={'Page__block__text__info'}>
-                                    <AuthorIcon width={24} height={24} />
+                                    <AuthorIcon width={24} height={24}/>
                                     <strong>Условия приема:</strong>
                                     <span>индивидуальное собеседование с ведущими программы.</span>
                                 </div>
                                 <div className={'Page__block__text__info'}>
-                                    <CalendarIcon width={24} height={24} />
+                                    <CalendarIcon width={24} height={24}/>
                                     <strong>Режим занятий:</strong>
                                     <span>6 трёхдневок в год (пятница, суббота, воскресенье), с 10.00-19.00</span>
                                 </div>
                                 <div className={'Page__block__text__info'}>
-                                    <StudyIcon width={24} height={24} />
+                                    <StudyIcon width={24} height={24}/>
                                     <strong>Форма обучения:</strong>
                                     <span>очно-дистанционная</span>
                                 </div>
                                 <div className={'Page__block__text__info'}>
-                                    <CalendarIcon width={24} height={24} />
+                                    <CalendarIcon width={24} height={24}/>
                                     <strong>Длительность программы:</strong>
-                                    <span>3 года</span>
+                                    <span>3 года базовый курс / 2,5 гда клинический курс</span>
                                 </div>
                                 <div className={'Page__block__text__info'}>
-                                    <MoneyIcon width={24} height={24} />
+                                    <MoneyIcon width={24} height={24}/>
                                     <strong>Стоимость:</strong>
-                                    <span>150 евро за трехдневный семинар</span>
+                                    <span>15000 рублей за трехдневный семинар</span>
                                 </div>
                                 <div className={'Page__block__text__info'}>
-                                    <AttentionIcon width={24} height={24} />
+                                    <AttentionIcon width={24} height={24}/>
                                     <strong>Старт программы: осень 2021г.</strong>
                                     <NavHashLink
                                         path={`/education/long_course/${props.id}#form`}
@@ -325,17 +334,65 @@ const LongCourse = ({ ...props }) => {
                                     />
                                 </div>
                             </div>
+
+                            <p></p>
+                            <span className={'LongCourse__block-info__title'}>Что дает экзистенциальный анализ</span>
+                            <p>Экзистенциальный анализ обращает внимание не только на психическое, но и на духовное
+                                измерение человека, тем самым побуждает человека максимально реализовывать свою свободу
+                                и потенциал в жизни.</p>
+                            <p>Бережно и внимательно экзистенциальный аналитик помогает обнаружить клиенту ценности,
+                                точки опоры, укрепить его жизненную позицию и обрести внутреннее согласие.</p>
+
+                            <p>Программа обучения развивает не только профессиональные навыки, но и качественно меняет
+                                жизнь студента. Благодаря знакомству с этим глубоким и объемным универсальным методом
+                                экзистенциальный аналитик учится работать с разными запросами.
+                            </p>
+
+                            <p></p>
+                            <span className={'LongCourse__block-info__title'}>Задачи образовательного направления в Высшей Психологической Школе</span>
+                            <ul>
+                                <li>Помочь специалистам (психологам, врачам, педагогам, социальным работникам) освоить теорию и методы экзистенциального анализа.
+                                    <p>Базовое и клиническое обучение по экзистенциальному  анализу позволяет обрести специалисту системный подход и работать со многими запросами клиентов и пациентов: депрессия, проблемы в отношениях, страхи, вопросы самоопределения,  поиск жизненных ориентиров и др.</p>
+                                </li>
+                                <li>Сделать доступным программы самопознания для специалистов любых профессии.
+                                    <p>Структурированная система наших программ и глубокие темы самопознания дают возможность каждому человеку вне зависимости от возраста и рода деятельности личностно развиваться, познавать себя и приходить к наполненной жизни.</p>
+                                </li>
+                            </ul>
+
+                            <span className={'LongCourse__block-info__title'}>Отзывы</span>
+
+                            <p className={'LongCourse__block-info__quote'} >
+                                «Экзистенциальный анализ качественно изменил мою жизнь, жизнь коллег, клиентов, пациентов. И радуясь этим переменам, нам хотелось бы больше знакомить с ним людей и оказывать консультативные и образовательные услуги в соответствии с европейскими стандартами»
+                                <br/>
+                                <span className={'author'}>Евгения Кольцова</span>
+                            </p>
+
+
                         </div>
 
                         <div className={'LongCourse__block-info__author'}>
-                            <span className={'LongCourse__block-info__title'}>Программу проводит</span>
+                            <span className={'LongCourse__block-info__title'}>Руководитель программы</span>
+
+                            <span className={'LongCourse__block-info__name'}>Лэнгле Альфрид Антон</span>
+                            <Devider width={240}/>
+
+                            <p>
+                                Ph.D., M.D., Dr. h.c., профессор, почетный президент Международного общества
+                                экзистенциального анализа и логотерапии (GLE-International), автор
+                                экзистенциально-аналитического подхода.
+                            </p>
+                            <ALink path={'http://www.laengle.info'}>http://www.laengle.info</ALink>
+                            <p></p>
+
+
+                            <span className={'LongCourse__block-info__title'}>Программу проводят</span>
 
                             <div
                                 className={'LongCourse__block-info__author-img'}
                                 style={{ backgroundImage: `url("../../images/team/mar_sv.jpeg")` }}
                             />
                             <span className={'LongCourse__block-info__name'}>Светлана Мардоян</span>
-                            <Devider width={240} />
+                            <Devider width={240}/>
 
                             <p>
                                 Окончила Ереванский медицинский институт, ординатуру по психотерапии в РМАПО.
@@ -352,7 +409,7 @@ const LongCourse = ({ ...props }) => {
                                 style={{ backgroundImage: `url("../../images/team/hol_vita2.jpg")` }}
                             />
                             <span className={'LongCourse__block-info__name'}>Вита Холмогорова</span>
-                            <Devider width={240} />
+                            <Devider width={240}/>
 
                             <p>
                                 Окончила МГППУ, факультет Психологическое консультирование и психотерапия, РГМУ,
@@ -366,7 +423,7 @@ const LongCourse = ({ ...props }) => {
                                 style={{ backgroundImage: `url("../../images/team/kol_ev2.jpg")` }}
                             />
                             <span className={'LongCourse__block-info__name'}>Евгения Кольцова</span>
-                            <Devider width={240} />
+                            <Devider width={240}/>
 
                             <p>
                                 Окончила МГУ им. М.В. Ломоносова, факультет психологии, кафедра психологии личности;
@@ -379,14 +436,7 @@ const LongCourse = ({ ...props }) => {
                                 практических семинаров и курсов по психологии.
                             </p>
 
-                            <span className={'LongCourse__block-info__name'}>Лэнгле Альфрид Антон</span>
-                            <Devider width={240} />
 
-                            <p>
-                                Ph.D., M.D., Dr. h.c., профессор, почетный президент Международного общества
-                                экзистенциального анализа и логотерапии (GLE-International), автор
-                                экзистенциально-аналитического подхода.
-                            </p>
                         </div>
                     </div>
                 </>
@@ -395,7 +445,7 @@ const LongCourse = ({ ...props }) => {
         case '2':
             return (
                 <>
-                    <BlockTitle children={'Психологическое консультирование'} className={'Page__block'} id={'step_0'} />
+                    <BlockTitle children={'Психологическое консультирование'} className={'Page__block'} id={'step_0'}/>
 
                     <div className={'Page__block LongCourse__block-info'}>
                         <div className={'LongCourse__block-info__course'}>
@@ -567,7 +617,7 @@ const LongCourse = ({ ...props }) => {
         default:
             return (
                 <>
-                    <BlockTitle children={`Длинный курс под номером ${props.id} не найден`} className={'Page__block'} />
+                    <BlockTitle children={`Длинный курс под номером ${props.id} не найден`} className={'Page__block'}/>
                 </>
             );
     }
