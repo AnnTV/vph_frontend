@@ -17,15 +17,15 @@ export const ShortCourses = () => {
 
     return (
         <div className={'Page'}>
-            <ShortCourse id={id} />
+            <ShortCourse id={id}/>
 
-            <BlockTitle children={'Записаться на курс'} className={'Page__block'} />
+            <BlockTitle children={'Записаться на курс'} className={'Page__block'}/>
             <article className={'Page__block Course_contact-block'}>
                 <section className={'Course_contact-block__form'}>
-                    <CourseForm course={getCourse(id)} />
+                    <CourseForm course={getCourse(id)}/>
                 </section>
             </article>
-            <Devider className={'Page__devider'} />
+            <Devider className={'Page__devider'}/>
         </div>
     );
 };
@@ -35,8 +35,8 @@ const ShortCourse = ({ ...props }) => {
         case '0':
             return (
                 <>
-                    <BlockTitle children={'Зависимость и созависимость'} className={'Page__block'} />
-                    <BlockSubTitle children={'Октябрь — Декабрь (2020-2021)'} className={'Page__block'} />
+                    <BlockTitle children={'Зависимость и созависимость'} className={'Page__block'}/>
+                    <BlockSubTitle children={'Октябрь — Декабрь (2020-2021)'} className={'Page__block'}/>
 
                     <div className={'Page__block ShortCourse__block'}>
                         <div className={'Page__block__text'}>
@@ -88,7 +88,8 @@ const ShortCourse = ({ ...props }) => {
                             <span className={'ShortCourse__block-info__title'}>Тренинговые занятия модуля</span>
                             <ul>
                                 <li>индивидуальные сессии участников группы</li>
-                                <li>обсуждения затруднений в психотерапевтической работе каждой темы через кейс-метод</li>
+                                <li>обсуждения затруднений в психотерапевтической работе каждой темы через кейс-метод
+                                </li>
                                 <li>
                                     терапевтические упражнения для развития навыков работы с запросом клиента и развитие
                                     собственного психотерапевтического инструментария
@@ -111,14 +112,27 @@ const ShortCourse = ({ ...props }) => {
                                 style={{ backgroundImage: `url("../../images/team/irina_isaeva.jpg")` }}
                             />
                             <span className={'ShortCourse__block-info__name'}>Ирина Исаева</span>
-                            <Devider width={240} />
+                            <Devider width={240}/>
 
-                            <p>
-                                Гештальт-терапевт, обучающий тренер по гештальт-терапии 1-ой и 2-ой ступени, супервизор,
-                                23-летний стаж психологической практики. 11-лет управленческого стажа. 20-летний опыт
-                                работы в сфере образования.
+                            <p>Гештальт-терапевт, обучающий тренер по гештальт-терапии 1-ой, 2 и 3-ой ступени,
+                                супервизор, 23-летний стаж психологической практики. Опыт работы психологом в образовании и соц
+                                стуктурах. 11-лет управленческого стажа. 20-летний опыт работы в сфере образования.
                             </p>
-                            <p>Тренер образовательных программ по гештальт-терапии 1-ой и 2-ой ступени с 2007 года.</p>
+                            <p>Тренер образовательных программ по гештальт-терапии 1-ой, 2-ой и 3-ей ступеней с 2007
+                                года.</p>
+                            <p>Индивидуальная и групповая работа в гештальт подходе с 2005г</p>
+                            <strong>Дополнительное образование</strong>
+                            <ul>
+
+                                <li>Программа МИГИП-ГАТЛА 2006-2009гг</li>
+                                <li>Программа Французкого института гештальта (Жан -Мари Робин) для гештальт терапевтов
+                                    и супервизоров 2006 -2010гг</li>
+                                <li>Семинары Питера Филиппсона ( гештальт центр Манчестера) 2016 -2020гг</li>
+                                <li>В настоящее время обучение в международной Российско-Итальянской программе (
+                                    Маргерита Спаньола Лобб) Психопатология и развитие в парадигме гештальт-терапии :
+                                    клиника поля"
+                                </li>
+                            </ul>
                             <p>
                                 Выпустила более 100 групп по гештальт-терапии 1-ой и 2-ой ступени. Психолог-консультант
                                 Совета при Президенте РФ.
@@ -134,7 +148,7 @@ const ShortCourse = ({ ...props }) => {
                         children={'Психологическая работа с психосоматическими запросами'}
                         className={'Page__block'}
                     />
-                    <BlockSubTitle children={'Ноябрь — Октябрь (2020-2021)'} className={'Page__block'} />
+                    <BlockSubTitle children={'Ноябрь — Октябрь (2020-2021)'} className={'Page__block'}/>
 
                     <div className={'Page__block ShortCourse__block'}>
                         <div className={'Page__block__text'}>
@@ -181,7 +195,8 @@ const ShortCourse = ({ ...props }) => {
                             <span className={'ShortCourse__block-info__title'}>Тренинговые занятия модуля</span>
                             <ul>
                                 <li>индивидуальные сессии участников группы</li>
-                                <li>обсуждения затруднений в психотерапевтической работе каждой темы через кейс-метод</li>
+                                <li>обсуждения затруднений в психотерапевтической работе каждой темы через кейс-метод
+                                </li>
                                 <li>
                                     терапевтические упражнения для развития навыков работы с запросом клиента и развитие
                                     собственного психотерапевтического инструментария
@@ -201,7 +216,7 @@ const ShortCourse = ({ ...props }) => {
                                 style={{ backgroundImage: `url("../../images/team/irina_isaeva.jpg")` }}
                             />
                             <span className={'ShortCourse__block-info__name'}>Ирина Исаева</span>
-                            <Devider width={240} />
+                            <Devider width={240}/>
 
                             <p>
                                 Гештальт-терапевт, обучающий тренер по гештальт-терапии 1-ой и 2-ой ступени, супервизор,
@@ -224,7 +239,7 @@ const ShortCourse = ({ ...props }) => {
                         children={'Феноменология: искусство интересоваться клиентами'}
                         className={'Page__block'}
                     />
-                    <BlockSubTitle children={'10 Апреля 12:00 — 19:00 онлайн'} className={'Page__block'} />
+                    <BlockSubTitle children={'10 Апреля 12:00 — 19:00 онлайн'} className={'Page__block'}/>
 
                     <div className={'Page__block ShortCourse__block'}>
                         <div className={'Page__block__text'}>
@@ -247,8 +262,8 @@ const ShortCourse = ({ ...props }) => {
                     </div>
 
                     <div className={'Page__block'}>
-                        <BlockSubTitle children={'6 часов  Теория и отработка навыков'} level={1} />
-                        <BlockSubTitle children={'Опция: разбор кейсов участников'} level={1} />
+                        <BlockSubTitle children={'6 часов  Теория и отработка навыков'} level={1}/>
+                        <BlockSubTitle children={'Опция: разбор кейсов участников'} level={1}/>
                     </div>
 
                     <div className={'Page__block ShortCourse__block-info'}>
@@ -308,12 +323,12 @@ const ShortCourse = ({ ...props }) => {
                                 style={{ backgroundImage: `url("../../images/team/elena_stats.jpg")` }}
                             />
                             <span className={'ShortCourse__block-info__name'}>Елена Станковская</span>
-                            <Devider width={240} />
+                            <Devider width={240}/>
 
                             <p>Психолог-консультант</p>
                             <p>(GLE International, Австрия), транзактный аналитик</p>
                             <p>
-                                Кандидат психологических наук, кандидат на соискание звания транзактного аналитика в
+                                Кандидат психологических наук, кандидат на соискание звания транзактного аналитика в
                                 области психотерапии, доцент НИУ ВШЭ. Более 12 лет ведет индивидуальную и групповую
                                 работу с клиентами, более 10 лет преподает психологическое консультирование.
                             </p>
@@ -328,8 +343,8 @@ const ShortCourse = ({ ...props }) => {
         case '3':
             return (
                 <>
-                    <BlockTitle children={'Хорошие контракты'} className={'Page__block'} />
-                    <BlockSubTitle children={'03 Апреля 12:00 — 19:00 онлайн'} className={'Page__block'} />
+                    <BlockTitle children={'Хорошие контракты'} className={'Page__block'}/>
+                    <BlockSubTitle children={'03 Апреля 12:00 — 19:00 онлайн'} className={'Page__block'}/>
 
                     <div className={'Page__block ShortCourse__block'}>
                         <div className={'Page__block__text'}>
@@ -356,8 +371,8 @@ const ShortCourse = ({ ...props }) => {
                     </div>
 
                     <div className={'Page__block'}>
-                        <BlockSubTitle children={'6 часов  Теория и отработка навыков'} level={1} />
-                        <BlockSubTitle children={'Опция: разбор кейсов участников'} level={1} />
+                        <BlockSubTitle children={'6 часов  Теория и отработка навыков'} level={1}/>
+                        <BlockSubTitle children={'Опция: разбор кейсов участников'} level={1}/>
                     </div>
 
                     <div className={'Page__block ShortCourse__block-info'}>
@@ -381,7 +396,7 @@ const ShortCourse = ({ ...props }) => {
                                     схемы «Контрактной матрицы» (Ш. Силлс).
                                 </li>
                                 <li>
-                                    Как заключать хорошие контракты. В чем разница в соглашениях  с клиентами на разных
+                                    Как заключать хорошие контракты. В чем разница в соглашениях с клиентами на разных
                                     этапах работы.
                                 </li>
                             </ul>
@@ -414,12 +429,12 @@ const ShortCourse = ({ ...props }) => {
                                 style={{ backgroundImage: `url("../../images/team/elena_stats.jpg")` }}
                             />
                             <span className={'ShortCourse__block-info__name'}>Елена Станковская</span>
-                            <Devider width={240} />
+                            <Devider width={240}/>
 
                             <p>Психолог-консультант</p>
                             <p>(GLE International, Австрия), транзактный аналитик</p>
                             <p>
-                                Кандидат психологических наук, кандидат на соискание звания транзактного аналитика в
+                                Кандидат психологических наук, кандидат на соискание звания транзактного аналитика в
                                 области психотерапии, доцент НИУ ВШЭ. Более 12 лет ведет индивидуальную и групповую
                                 работу с клиентами, более 10 лет преподает психологическое консультирование.
                             </p>
@@ -434,7 +449,7 @@ const ShortCourse = ({ ...props }) => {
         default:
             return (
                 <>
-                    <BlockTitle children={`Курс под номером ${props.id} не найден`} className={'Page__block'} />
+                    <BlockTitle children={`Курс под номером ${props.id} не найден`} className={'Page__block'}/>
                 </>
             );
     }

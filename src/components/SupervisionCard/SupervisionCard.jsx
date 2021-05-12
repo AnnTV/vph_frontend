@@ -51,7 +51,7 @@ export const SupervisionCard = ({ ...props }) => {
                     <div className={'SupervisionCard__main-info-details'}>
                         <div>
                             <MoneyIcon width={24} height={24} />
-                            <strong>Стоймость:</strong>
+                            <strong>Стоимость:</strong>
                         </div>
                         <span className={'SupervisionCard__text'}>{props.children.cost}</span>
                     </div>
