@@ -23,8 +23,8 @@ export const MainPage = () => {
             <article className={'Page__block Main_first-block'}>
                 <div className={'Main_first-block__text-info'}>
                     <section className={'Main_first-block__prefix'}>
-                        <span>Зачем учиться у нас?</span>
-                        <Devider width={240} other={{ 'margin': '0 auto', 'paddingTop': '16px' }}/>
+                        <span>Добро пожаловать в профессию</span>
+                        <Devider width={400} other={{ 'margin': '0 auto', 'paddingTop': '16px' }}/>
                     </section>
 
                     <section className={'Main_first-block__label'}>

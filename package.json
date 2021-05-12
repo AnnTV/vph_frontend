@@ -29,11 +29,12 @@
     },
     "scripts": {
         "start": "react-scripts start",
-        "build": "react-scripts build && rm -rf /var/www/psyschool.com.ru/html/ && mkdir /var/www/psyschool.com.ru/html && cd build/ && cp -r ./ /var/www/psyschool.com.ru/html/",
+        "build": "react-scripts build",
+        "deploy": "react-scripts build && rm -rf /var/www/psyschool.com.ru/html/ && mkdir /var/www/psyschool.com.ru/html && cd build/ && cp -r ./ /var/www/psyschool.com.ru/html/",
         "test": "react-scripts test",
         "eject": "react-scripts eject"
     },
-    "proxy": "http://localhost:3001",
+    "proxy": "http://localhost:3000/",
     "eslintConfig": {
         "extends": [
             "react-app",

@@ -134,6 +134,22 @@
     margin-top: 64px;
 }
 
+.LongCourse__block-info__reply {
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.5em;
+    font-size: 14px;
+    color: var(--primary-1);
+    margin-top: 16px;
+}
+
+.LongCourse__block-info__reply .author {
+    text-align: right;
+    display: block;
+    margin-top: 20px;
+    color: var(--primary-1);
+}
+
 .LongCourse__block-info__quote .author {
     text-align: right;
     display: block;

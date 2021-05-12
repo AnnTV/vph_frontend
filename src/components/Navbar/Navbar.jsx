@@ -34,7 +34,7 @@ export const Navbar = ({ ...props }) => {
     return (
         <>
             <nav className={'Navbar ' + props.className}>
-                {routes.slice(0, 4).map((item, idx) => (
+                {routes.slice(0, 5).map((item, idx) => (
                     <NavLink
                         key={idx}
                         path={item.path}
