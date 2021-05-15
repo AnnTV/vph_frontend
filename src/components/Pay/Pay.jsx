@@ -137,7 +137,7 @@ export const Pay = ({ ...props }) => {
 
                 <div className={'Info'}>
                     <div>
-                        <span className={'Label'}>Стоймость: </span>
+                        <span className={'Label'}>Стоимость: </span>
                         <span>{props.amount} рублей</span>
                     </div>
                     <div>
