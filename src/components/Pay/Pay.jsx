@@ -108,7 +108,7 @@ export const Pay = ({ ...props }) => {
         console.log ( v );
         setPromoCode ( v );
 
-        if ( v === props.promoCode ) setPromoAmount ( props.promoAmount );
+        if ( props.promoCode != null && v === props.promoCode ) setPromoAmount ( props.promoAmount );
     };
 
     return (
