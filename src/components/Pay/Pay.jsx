@@ -14,6 +14,8 @@ import queryString from 'query-string';
 export const Pay = ({ ...props }) => {
     const { search } = useLocation();
     const query = queryString.parse(search);
+    const [ promoCode, setPromoCode ] = useState('');
+    const [ promoAmount, setPromoAmount ] = useState(props.amount);
 
     // const [firstName, setFirstName] = useState ( query.firstName );
     // const [secondName, setSecondName] = useState ( query.secondName );
@@ -33,10 +35,10 @@ export const Pay = ({ ...props }) => {
         resolver: yupResolver(schema),
     });
 
-    const genTinkoffData = (data) => {
+    const genTinkoffData = (data, amount) => {
         return {
             TerminalKey: '1617024976590',
-            Amount: props.amount * 100,
+            Amount: amount * 100,
             OrderId: `${(Math.random() * 100000000000).toFixed(0)}`,
             Description: props.desc,
             SuccessURL: 'https://psyschool.com.ru',
@@ -48,9 +50,9 @@ export const Pay = ({ ...props }) => {
                 Items: [
                     {
                         Name: props.title,
-                        Price: props.amount * 100,
+                        Price: amount * 100,
                         Quantity: 1.0,
-                        Amount: props.amount * 100,
+                        Amount: amount * 100,
                         PaymentMethod: 'full_prepayment',
                         PaymentObject: 'service',
                         Tax: 'none',
@@ -62,11 +64,12 @@ export const Pay = ({ ...props }) => {
 
     const submitHandler = (data) => {
         console.log(data);
+        debugger;
 
         const appLink = 'https://securepay.tinkoff.ru/v2/Init';
 
         axios
-            .post(appLink, genTinkoffData(data))
+            .post(appLink, genTinkoffData(data, promoAmount))
             .then((response) => {
                 console.log(response);
                 reset(); // PaymentURL
@@ -98,6 +101,14 @@ export const Pay = ({ ...props }) => {
             case 'phone':
                 return contactFormErrors.notCorrect;
         }
+    };
+
+    const applyPromo = ( e ) => {
+        const v = e.target.value;
+        console.log ( v );
+        setPromoCode ( v );
+
+        if ( v === props.promoCode ) setPromoAmount ( props.promoAmount );
     };
 
     return (
@@ -135,10 +146,18 @@ export const Pay = ({ ...props }) => {
                     value={query.phone ? `+${query.phone}` : ''}
                 />
 
+                <input
+                    name={"propmo"}
+                    placeholder={'Промокод'}
+                    onChange={applyPromo}
+                    className={'input'}
+                    value={promoCode}
+                    />
+
                 <div className={'Info'}>
                     <div>
                         <span className={'Label'}>Стоимость: </span>
-                        <span>{props.amount} рублей</span>
+                        <span>{promoAmount} рублей</span>
                     </div>
                     <div>
                         <span className={'Label'}>Описание: </span>
