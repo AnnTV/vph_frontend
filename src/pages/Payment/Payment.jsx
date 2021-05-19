@@ -19,11 +19,7 @@ export const Payment = () => {
 
             <article className={'Page__block Payment_block'}>
                 <section className={'Payment_block__form'}>
-                    <Pay
-                        amount={payFormOptions[id].amount}
-                        desc={payFormOptions[id].desc}
-                        title={payFormOptions[id].title}
-                    />
+                    <Pay {...payFormOptions[id]} />
                 </section>
             </article>
 
