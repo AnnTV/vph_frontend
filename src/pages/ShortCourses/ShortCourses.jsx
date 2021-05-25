@@ -6,13 +6,16 @@ import { useParams } from 'react-router';
 import { BlockTitle } from '../../components/BlockTitle/BlockTitle';
 import { BlockSubTitle } from '../../components/BlockSubTitle/BlockSubTitle';
 import { CourseForm } from '../../components/CourseForm/CourseForm';
-import { courseOptions } from '../../utils/infoData';
+import { courseOptions, TYPE_SHORT } from '../../utils/infoData';
 
 export const ShortCourses = () => {
     let { id } = useParams();
 
     const getCourse = (id) => {
-        return courseOptions.slice(9)[id].value;
+        const sortCource = courseOptions
+            .filter ( i => i.type === TYPE_SHORT )
+            .find ( i => i.id === id);
+        return sortCource ? sortCource.value : '';
     };
 
     return (
@@ -431,6 +434,42 @@ const ShortCourse = ({ ...props }) => {
                     </div>
                 </>
             );
+        case '4':
+            return (
+                <>
+                    <BlockTitle children={'Специализация по работе с бесплодием'} className={'Page__block'}/>
+                    <BlockSubTitle children={'03 Апреля 12:00 — 19:00 онлайн'} className={'Page__block'}/>
+
+                    <div className={'Page__block ShortCourse__block'}>
+
+                    </div>
+                </>
+            );
+
+        case '5':
+            return (
+                <>
+                    <BlockTitle children={'психотерапевтический тренинг про Деньги'} className={'Page__block'}/>
+                    <BlockSubTitle children={'03 Апреля 12:00 — 19:00 онлайн'} className={'Page__block'}/>
+
+                    <div className={'Page__block ShortCourse__block'}>
+
+                    </div>
+                </>
+            );
+
+        // case '3':
+        //     return (
+        //         <>
+        //             <BlockTitle children={'Хорошие контракты'} className={'Page__block'}/>
+        //             <BlockSubTitle children={'03 Апреля 12:00 — 19:00 онлайн'} className={'Page__block'}/>
+        //
+        //             <div className={'Page__block ShortCourse__block'}>
+        //
+        //             </div>
+        //         </>
+        //     );
+
         default:
             return (
                 <>

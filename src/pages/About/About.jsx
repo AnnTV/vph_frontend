@@ -23,7 +23,7 @@ export const AboutPage = () => {
         <div className={'Page'}>
             <div className={'Page__block'}>
             <span className={'About__main-label'}>
-                Высшая психологическая школа учит профессии по-новому
+                Высшая психологическая школа: учим профессии по-новому
             </span>
 
             <span className={'About__main-descr'}>
@@ -49,7 +49,7 @@ export const AboutPage = () => {
             </div>
 
             <div className={'Page__block About__main-slogan'}>
-                Обучение психологов практике консультирования
+                Добро пожаловать в профессию!
             </div>
 
 
