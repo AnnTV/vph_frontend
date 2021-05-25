@@ -14,6 +14,7 @@ import './Accordion.css';
 import { NavHashLink } from '../Link/Link';
 
 export const Accordion = ({ ...props }) => {
+    const pathPrefix = props.pathPrefix ? props.pathPrefix : '/education';
     return (
         <SuperAccordion
             className={'Accordion ' + props.className}
@@ -36,7 +37,7 @@ export const Accordion = ({ ...props }) => {
                             <div className={'Accordion__steps'}>
                                 {item.steps.map((step, idx) => (
                                     <div className={'Accordion__steps__step'} key={idx}>
-                                        <NavHashLink path={`/education${step.path}`}>{step.text}</NavHashLink>
+                                        <NavHashLink path={`${pathPrefix}${step.path}`}>{step.text}</NavHashLink>
                                         {idx !== item.steps.length - 1 && <ArrowDownIcon width={24} height={24} />}
                                     </div>
                                 ))}

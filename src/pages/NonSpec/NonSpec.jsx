@@ -20,7 +20,7 @@ export const NonSpec = () => {
             {/*<BlockSubTitle children={'Долгосрочные программы — путь от специалиста к эксперту'} className={'Page__block'} />*/}
 
             <div className={'Page__block Education_accordion-block'}>
-                <Accordion items={accordionSpec} className={'Education_accordion'} />
+                <Accordion items={accordionSpec} className={'Education_accordion'} pathPrefix={'/'} />
             </div>
 
             {/*<BlockSubTitle*/}

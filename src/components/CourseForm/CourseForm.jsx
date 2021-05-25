@@ -155,10 +155,11 @@ export const CourseForm = ({ ...props }) => {
                 }}
                 title={`${userName}, ваша запись прошла успешно!`}
             >
-                <div>
+                {!props.noPay ? (<div>
                     <p>Вы можете произвести оплату выбранного курса прямо сейчас или же дождаться нашего ответа!</p>
-                    <ButtonLink path={payLink} children={'Перейти к оплате'} />
-                </div>
+                    <ButtonLink path={payLink} children={'Перейти к оплате'}/>
+                </div>) : null
+                }
             </SkyLightStateless>
         </>
     );

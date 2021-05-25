@@ -11,6 +11,7 @@ import { LongCourses } from '../pages/LognCourses/LognCourses';
 import { Supervision } from '../pages/Supervision/Supervision';
 import { Payment } from '../pages/Payment/Payment';
 import { NonSpec } from '../pages/NonSpec/NonSpec';
+import { NonSpecPrograms } from '../pages/NonSpec/NonSpecPrograms';
 
 const BaseEducation = () => {
     let { path } = useRouteMatch();
@@ -26,8 +27,24 @@ const BaseEducation = () => {
             <Route path={`${path}/long_course/:id`}>
                 <LongCourses />
             </Route>
+
             <Route path={`${path}/supervision`}>
                 <Supervision />
+            </Route>
+        </Switch>
+    );
+};
+
+const NonSpecRoutes = () => {
+    let { path } = useRouteMatch();
+
+    return (
+        <Switch>
+            <Route exact path={path}>
+                <NonSpec />
+            </Route>
+            <Route path={`${path}/:id`}>
+                <NonSpecPrograms />
             </Route>
         </Switch>
     );
@@ -45,9 +62,9 @@ export const routes = [
         component: BaseEducation,
     },
     {
-        path: '/non-spec',
+        path: '/non_spec',
         text: 'Для неспециалистов',
-        component: NonSpec,
+        component: NonSpecRoutes,
     },
     {
         path: '/about',
