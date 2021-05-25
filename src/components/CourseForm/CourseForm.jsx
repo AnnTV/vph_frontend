@@ -51,13 +51,9 @@ export const CourseForm = ({ ...props }) => {
                 console.log(response);
                 reset();
                 NotificationManager.success('Ваше сообщение отправлено, скоро мы с вами свяжемся', 'Успех!');
+                const course = courseOptions.find ( i => i.value === data.course );
 
-                if (
-                    courseOptions
-                        .slice(9)
-                        .map((item) => item.value)
-                        .includes(data.course)
-                ) {
+                if ( course && course.pay ) {
                     setUserName(data.firstName);
                     setPayLink(
                         `/pay/${getCourseId(data.course)}?firstName=${data.firstName}&secondName=${
@@ -155,7 +151,7 @@ export const CourseForm = ({ ...props }) => {
                 }}
                 title={`${userName}, ваша запись прошла успешно!`}
             >
-                {!props.noPay ? (<div>
+                { payLink.length ? (<div>
                     <p>Вы можете произвести оплату выбранного курса прямо сейчас или же дождаться нашего ответа!</p>
                     <ButtonLink path={payLink} children={'Перейти к оплате'}/>
                 </div>) : null

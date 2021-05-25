@@ -39,7 +39,7 @@ export const NonSpecPrograms = () => {
             <BlockTitle children={`Записаться на ${courceName}`} className={'Page__block'}/>
             <article className={'Page__block Course_contact-block'}>
                 <section className={'Course_contact-block__form'}>
-                    <CourseForm course={getCourse(id)} noPay={true}/>
+                    <CourseForm course={getCourse(id)} />
                 </section>
             </article>
             <Devider className={'Page__devider'}/>
