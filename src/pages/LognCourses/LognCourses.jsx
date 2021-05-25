@@ -454,10 +454,10 @@ const LongCourse = ({ ...props }) => {
 
                         <div className={'LongCourse__block-info__author'}>
                             <span className={'LongCourse__block-info__title'}>Руководитель программы</span>
-                            {/*<div*/}
-                            {/*    className={'LongCourse__block-info__author-img'}*/}
-                            {/*    style={{ backgroundImage: `url("../../images/team/langle.jpg")` }}*/}
-                            {/*/>*/}
+                            <div
+                                className={'LongCourse__block-info__author-img'}
+                                style={{ backgroundImage: `url("../../images/team/langle.jpg")` }}
+                            />
 
                             <span className={'LongCourse__block-info__name'}>Лэнгле Альфрид Антон</span>
                             <Devider width={240}/>
