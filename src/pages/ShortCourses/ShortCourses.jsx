@@ -228,7 +228,7 @@ const ShortCourse = ({ ...props }) => {
                         children={'Феноменология: искусство интересоваться клиентами'}
                         className={'Page__block'}
                     />
-                    <BlockSubTitle children={'10 Апреля 12:00 — 19:00 онлайн'} className={'Page__block'}/>
+                    <BlockSubTitle children={'Скоро'} className={'Page__block'}/>
 
                     <div className={'Page__block ShortCourse__block'}>
                         <div className={'Page__block__text'}>
@@ -333,7 +333,7 @@ const ShortCourse = ({ ...props }) => {
             return (
                 <>
                     <BlockTitle children={'Хорошие контракты'} className={'Page__block'}/>
-                    <BlockSubTitle children={'03 Апреля 12:00 — 19:00 онлайн'} className={'Page__block'}/>
+                    <BlockSubTitle children={'Скоро'} className={'Page__block'}/>
 
                     <div className={'Page__block ShortCourse__block'}>
                         <div className={'Page__block__text'}>
